@@ -27,6 +27,20 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, LevelEditor.class));
             }
         });
+
+        quickPlay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this,gameActivity.class));
+            }
+        });
+
+        tutorial.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, tutorialActivity.class));
+            }
+        });
     }
 
 
