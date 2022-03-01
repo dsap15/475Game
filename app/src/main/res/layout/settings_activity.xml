@@ -55,8 +55,8 @@
 
     <ImageButton
         android:id="@+id/imageButton5"
-        android:layout_width="71dp"
-        android:layout_height="47dp"
+        android:layout_width="86dp"
+        android:layout_height="60dp"
         android:layout_marginStart="28dp"
         android:layout_marginLeft="28dp"
         app:layout_constraintBottom_toBottomOf="parent"
