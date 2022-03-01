@@ -9,7 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.475Game">
-        <activity android:name=".start_activity"></activity>
+        <activity
+            android:name=".BackButtonTest"
+            android:exported="false"
+            android:label="@string/title_activity_back_button_test"
+            android:theme="@style/Theme.475Game.NoActionBar" />
+        <activity
+            android:name=".LevelEditor"
+            android:exported="false" />
+        <activity android:name=".start_activity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
