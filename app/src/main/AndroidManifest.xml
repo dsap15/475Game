@@ -12,6 +12,7 @@
         <activity android:name=".gameActivity"></activity>
         <activity android:name=".tutorialActivity" />
         <activity android:name=".start_activity" />
+        <activity android:name=".LevelEditor" />
         <activity
             android:name=".SettingsActivity"
             android:exported="false"

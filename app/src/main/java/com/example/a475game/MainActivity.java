@@ -8,11 +8,9 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ToggleButton;
 
-import androidx.navigation.fragment.NavHostFragment;
-
 public class MainActivity extends AppCompatActivity {
 
-    public ToggleButton btnToggleDark;
+
 
 
     @Override
