@@ -12,6 +12,11 @@
         <activity android:name=".gameActivity"></activity>
         <activity android:name=".tutorialActivity" />
         <activity android:name=".start_activity" />
+        <activity
+            android:name=".SettingsActivity"
+            android:exported="false"
+            android:label="@string/title_activity_settings" />
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
