@@ -11,41 +11,68 @@
     android:orientation="vertical"
     android:id="@+id/layout">
 
+    <ImageView
+        android:id="@+id/image"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/node"
+            />
+
+
     <ImageButton
-        android:id="@+id/imageButton3"
+        android:id="@+id/vrect"
+        android:layout_width="22dp"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/rect" />
+
+    <ImageView
+        android:id="@+id/image2"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/node"
+        />
+    <ImageView
+        android:id="@+id/image3"
         android:layout_width="80dp"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/node"
         />
 
-    <View
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-         />
+<!--    <ImageButton-->
+<!--        android:id="@+id/imageButton3"-->
+<!--        android:layout_width="80dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:srcCompat="@drawable/node"-->
+<!--        />-->
 
-    <ImageButton
-        android:id="@+id/imageButton4"
-        android:layout_width="80dp"
-        android:layout_height="wrap_content"
+<!--    <View-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="50dp"-->
+<!--         />-->
 
-        app:srcCompat="@drawable/node" />
+<!--    <ImageButton-->
+<!--        android:id="@+id/imageButton4"-->
+<!--        android:layout_width="80dp"-->
+<!--        android:layout_height="wrap_content"-->
 
-    <View
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        />
+<!--        app:srcCompat="@drawable/node" />-->
 
-    <ImageButton
-        android:id="@+id/imageButton5"
-        android:layout_width="80dp"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/node" />
+<!--    <View-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="50dp"-->
+<!--        />-->
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="match_parent"
-        android:layout_height="225dp"
-        app:srcCompat="@drawable/ic_launcher_background"
-        tools:ignore="VectorDrawableCompat" />
+<!--    <ImageButton-->
+<!--        android:id="@+id/imageButton5"-->
+<!--        android:layout_width="80dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:srcCompat="@drawable/node" />-->
+
+<!--    <ImageView-->
+<!--        android:id="@+id/imageView3"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="225dp"-->
+<!--        app:srcCompat="@drawable/ic_launcher_background"-->
+<!--        tools:ignore="VectorDrawableCompat" />-->
 
 </LinearLayout>

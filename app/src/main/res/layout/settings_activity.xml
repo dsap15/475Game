@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/backgroundColor"
+    android:background="#d6d7d7"
     tools:context=".SettingsActivity">
 
     <Spinner
@@ -19,7 +19,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toggleButton3"
-        app:layout_constraintVertical_bias="0.148" />
+        app:layout_constraintVertical_bias="0.148"
+        android:gravity="center_horizontal" />
 
     <ToggleButton
         android:id="@+id/toggleButton"
