@@ -21,6 +21,11 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import java.util.ArrayList;
+<<<<<<< Updated upstream
+=======
+import java.util.HashSet;
+import java.util.List;
+>>>>>>> Stashed changes
 
 
 public class gameActivity extends AppCompatActivity {
@@ -31,6 +36,20 @@ public class gameActivity extends AppCompatActivity {
     private boolean player1Turn = true;
     private final int player1Color = Color.rgb(0, 0, 255);
     private final int player2Color = Color.rgb(255, 0, 0);
+<<<<<<< Updated upstream
+=======
+    private HashSet<Dot> dotHashSet = new HashSet<Dot>();
+    private List<String> arr = new ArrayList<>();
+    //private String [] arr = new String[12];
+    private int squares =0;
+    private int d;
+    private int playerScore1;
+    private int playerScore2;
+
+
+
+
+>>>>>>> Stashed changes
 
 
 
@@ -132,6 +151,43 @@ public class gameActivity extends AppCompatActivity {
         Dot firstDotClicked = dots[firstDotClickedIndex.row][firstDotClickedIndex.col];
         Dot clickedDot = dots[dotIndex.row][dotIndex.col];
         Paint linePaint = new Paint();
+<<<<<<< Updated upstream
+=======
+
+        //arr = new String[12];
+        int firstDot = firstDotClickedIndex.row;
+        int firstDotcol = firstDotClickedIndex.col;
+        int secondDotRow = dotIndex.row;
+        int secondDotCol = dotIndex.col;
+        String line;
+
+        //String line = Integer.toString(firstDot) + Integer.toString(firstDotcol)+ Integer.toString(clickedDotS)+ Integer.toString(clickedDotcol);
+        if(firstDot == secondDotRow){
+            if(firstDotcol < secondDotCol){
+                line = Integer.toString(firstDot) + Integer.toString(firstDotcol) + Integer.toString(secondDotCol);
+            }
+            else{
+                line = Integer.toString(firstDot) + Integer.toString(secondDotCol) + Integer.toString(firstDotcol);
+            }
+        }
+        else{
+            if(firstDot < secondDotRow){
+                line = "-"+Integer.toString(firstDotcol) +Integer.toString(firstDot) + Integer.toString(secondDotRow);
+            }
+            else{
+                line = "-"+Integer.toString(firstDotcol) +Integer.toString(secondDotRow) + Integer.toString(firstDot);
+            }
+        }
+
+        if(arr.contains(line)){
+            firstDotClickedIndex = dotIndex;
+            return;
+        }
+
+        arr.add(line);
+        System.out.println(arr);
+
+>>>>>>> Stashed changes
         if(player1Turn)
             linePaint.setColor(player1Color);
         else
@@ -140,7 +196,7 @@ public class gameActivity extends AppCompatActivity {
         linePaint.setStrokeWidth(clickedDot.radius / 3);
         canvas.drawLine(clickedDot.x, clickedDot.y, firstDotClicked.x, firstDotClicked.y,linePaint);
         firstDotClickedIndex = null;
-
+        lineAndBoxChecker(line,  arr, firstDotcol, firstDot,  secondDotCol,  secondDotRow);
         player1Turn = !player1Turn;
 
         imageView.invalidate();
@@ -149,7 +205,60 @@ public class gameActivity extends AppCompatActivity {
         // fill rectangle
         // keep and update score
         // if last edge makes a box update score and dont switch the player
+<<<<<<< Updated upstream
         
+=======
+
+        public void lineAndBoxChecker(String line, List<String> arrayLine, int firstDotCol, int firstDotRow, int secondDotCol, int secondDotRow) {
+
+          if(!line.substring(0,1).equalsIgnoreCase("-")) {
+              String opposite1 = Integer.toString(firstDotRow - 1) + (line.substring(line.length() - 2));
+              String adjacent1 = "-" + (line.substring(line.length() - 2, line.length() - 1)) + Integer.toString(firstDotRow - 1) + Integer.toString(firstDotRow);
+              String adjacent2 = "-" + (line.substring(line.length() - 1)) + Integer.toString(firstDotRow - 1) + Integer.toString(firstDotRow);
+
+              String opposite2 = Integer.toString(firstDotRow + 1) + (line.substring(line.length() - 2));
+              String adjacent3 = "-" + (line.substring(line.length() - 2, line.length() - 1)) + Integer.toString(firstDotRow) + Integer.toString(firstDotRow + 1);
+              String adjacent4 = "-" + (line.substring(line.length() - 1)) + Integer.toString(firstDotRow) + Integer.toString(firstDotRow + 1);
 
 
+              if (arrayLine.contains(opposite1) && arrayLine.contains(adjacent1) && arrayLine.contains(adjacent2)) {
+>>>>>>> Stashed changes
+
+                  // add square to current player
+
+                  squares++;
+
+              }
+
+              if (arrayLine.contains(opposite2) && arrayLine.contains(adjacent3) && arrayLine.contains(adjacent4)) {
+
+                  // add square to current player
+                squares++;
+              }
+          }
+          else{
+              String opposite1 = "-"+Integer.toString(firstDotCol- 1) + (line.substring(line.length() - 2));
+              String adjacent1 = (line.substring(line.length() - 2, line.length() - 1)) + Integer.toString(firstDotCol - 1) + Integer.toString(firstDotCol);
+              String adjacent2 = (line.substring(line.length() - 1)) + Integer.toString(firstDotCol- 1) + Integer.toString(firstDotCol);
+
+              String opposite2 = "-" + Integer.toString(firstDotCol + 1) + (line.substring(line.length() - 2));
+              String adjacent3 = (line.substring(line.length() - 2, line.length() - 1)) + Integer.toString(firstDotCol) + Integer.toString(firstDotCol + 1);
+              String adjacent4 = (line.substring(line.length() - 1)) + Integer.toString(firstDotCol) + Integer.toString(firstDotCol + 1);
+
+
+              if (arrayLine.contains(opposite1) && arrayLine.contains(adjacent1) && arrayLine.contains(adjacent2)) {
+
+                  // add square to current player
+                squares++;
+              }
+
+              if (arrayLine.contains(opposite2) && arrayLine.contains(adjacent3) && arrayLine.contains(adjacent4)) {
+
+                  // add square to current player
+                squares++;
+              }
+
+          }
+            System.out.println(squares);
+        }
     }
