@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+    <array name="languages" >
+        <item>Choose Languages</item>
+        <item>English</item>
+        <item>Spanish</item>
+    </array>
+
+    <color name="backgroundColor">#C4A484</color>
+    <color name="textcolor">#FFFFFF</color>
+    #C4A484
+</resources>
