@@ -13,6 +13,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.RectF;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewTreeObserver;
@@ -21,6 +22,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 
 
 public class gameActivity extends AppCompatActivity {
@@ -29,8 +31,14 @@ public class gameActivity extends AppCompatActivity {
     private ImageView imageView;
     Dot[][] dots;
     private boolean player1Turn = true;
+    private boolean clicked = true;
     private final int player1Color = Color.rgb(0, 0, 255);
     private final int player2Color = Color.rgb(255, 0, 0);
+    private HashSet<Dot> dotHashSet = new HashSet<Dot>();
+    private String [] arr;
+    private int d;
+
+
 
 
 
@@ -50,7 +58,7 @@ public class gameActivity extends AppCompatActivity {
                     bitmap = Bitmap.createBitmap(imageView.getWidth(), imageView.getHeight(), Bitmap.Config.ARGB_8888);
                     canvas = new Canvas(bitmap);
                     imageView.setImageBitmap(bitmap);
-                    dots = generateDotGrid(3, imageView.getWidth(), imageView.getHeight());
+                    dots = generateDotGrid(5, imageView.getWidth(), imageView.getHeight());
                     drawDots(dots, canvas);
                 }
             });
@@ -132,8 +140,38 @@ public class gameActivity extends AppCompatActivity {
         Dot firstDotClicked = dots[firstDotClickedIndex.row][firstDotClickedIndex.col];
         Dot clickedDot = dots[dotIndex.row][dotIndex.col];
         Paint linePaint = new Paint();
+
+        arr = new String[12];
+        int firstDot = firstDotClickedIndex.row;
+        int firstDotcol = firstDotClickedIndex.col;
+        int secondDotRow = dotIndex.row;
+        int secondDotCol = dotIndex.col;
+        String line;
+        //String line = Integer.toString(firstDot) + Integer.toString(firstDotcol)+ Integer.toString(clickedDotS)+ Integer.toString(clickedDotcol);
+        if(firstDot == secondDotRow){
+            if(firstDotcol < secondDotCol){
+                line = Integer.toString(firstDot) + Integer.toString(firstDotcol) + Integer.toString(secondDotCol);
+            }
+            else{
+                line = Integer.toString(firstDot) + Integer.toString(secondDotCol) + Integer.toString(firstDotcol);
+            }
+        }
+        else{
+            if(firstDot < secondDotRow){
+                line = "-"+Integer.toString(firstDotcol) +Integer.toString(firstDot) + Integer.toString(secondDotRow);
+            }
+            else{
+                line = "-"+Integer.toString(firstDotcol) +Integer.toString(secondDotRow) + Integer.toString(firstDot);
+            }
+        }
+
+        arr[d] = line;
+        System.out.println(arr[d]);
+        d++;
+
         if(player1Turn)
             linePaint.setColor(player1Color);
+
         else
             linePaint.setColor(player2Color);
 
@@ -143,12 +181,23 @@ public class gameActivity extends AppCompatActivity {
 
         player1Turn = !player1Turn;
 
+
+
         imageView.invalidate();
         }
         /// we need to:
         // fill rectangle
         // keep and update score
         // if last edge makes a box update score and dont switch the player
+
+//        public void lineAndBoxChecker(String line, String [] arrChecker){
+//            String line1 = line.substring(0,2);
+//            String line2 = line.substring(2);
+//
+//            if()
+//
+//
+//        }
         
 
 
