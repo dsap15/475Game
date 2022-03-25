@@ -8,11 +8,9 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ToggleButton;
 
-import androidx.navigation.fragment.NavHostFragment;
-
 public class MainActivity extends AppCompatActivity {
 
-    public ToggleButton btnToggleDark;
+
 
 
     @Override
@@ -27,8 +25,22 @@ public class MainActivity extends AppCompatActivity {
 
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v  ) {
-                startActivity(new Intent(MainActivity.this, start_activity.class));
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, LevelEditor.class));
+            }
+        });
+
+        quickPlay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this,gameActivity.class));
+            }
+        });
+
+        tutorial.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, tutorialActivity.class));
             }
         });
 
