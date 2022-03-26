@@ -21,11 +21,10 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import java.util.ArrayList;
-<<<<<<< Updated upstream
-=======
+
 import java.util.HashSet;
 import java.util.List;
->>>>>>> Stashed changes
+
 
 
 public class gameActivity extends AppCompatActivity {
@@ -36,8 +35,7 @@ public class gameActivity extends AppCompatActivity {
     private boolean player1Turn = true;
     private final int player1Color = Color.rgb(0, 0, 255);
     private final int player2Color = Color.rgb(255, 0, 0);
-<<<<<<< Updated upstream
-=======
+
     private HashSet<Dot> dotHashSet = new HashSet<Dot>();
     private List<String> arr = new ArrayList<>();
     //private String [] arr = new String[12];
@@ -45,11 +43,12 @@ public class gameActivity extends AppCompatActivity {
     private int d;
     private int playerScore1;
     private int playerScore2;
+    private int grid = 3;
+    private int totalSquares = (grid - 1) * (grid - 1);
+    private int total =0;
+    private int prevTotal =0;
 
 
-
-
->>>>>>> Stashed changes
 
 
 
@@ -69,7 +68,7 @@ public class gameActivity extends AppCompatActivity {
                     bitmap = Bitmap.createBitmap(imageView.getWidth(), imageView.getHeight(), Bitmap.Config.ARGB_8888);
                     canvas = new Canvas(bitmap);
                     imageView.setImageBitmap(bitmap);
-                    dots = generateDotGrid(3, imageView.getWidth(), imageView.getHeight());
+                    dots = generateDotGrid(grid, imageView.getWidth(), imageView.getHeight());
                     drawDots(dots, canvas);
                 }
             });
@@ -130,9 +129,11 @@ public class gameActivity extends AppCompatActivity {
         }
         return index2D;
     }
-
+        //Player(s) Score
     private Index2D firstDotClickedIndex = null;
     private void onClick(float clickX, float clickY) {
+
+
 
         Index2D dotIndex = getClickedDotIndex(clickX, clickY, dots);
         if(dotIndex == null) // if the user didn't click a dot
@@ -151,8 +152,6 @@ public class gameActivity extends AppCompatActivity {
         Dot firstDotClicked = dots[firstDotClickedIndex.row][firstDotClickedIndex.col];
         Dot clickedDot = dots[dotIndex.row][dotIndex.col];
         Paint linePaint = new Paint();
-<<<<<<< Updated upstream
-=======
 
         //arr = new String[12];
         int firstDot = firstDotClickedIndex.row;
@@ -187,7 +186,6 @@ public class gameActivity extends AppCompatActivity {
         arr.add(line);
         System.out.println(arr);
 
->>>>>>> Stashed changes
         if(player1Turn)
             linePaint.setColor(player1Color);
         else
@@ -196,7 +194,11 @@ public class gameActivity extends AppCompatActivity {
         linePaint.setStrokeWidth(clickedDot.radius / 3);
         canvas.drawLine(clickedDot.x, clickedDot.y, firstDotClicked.x, firstDotClicked.y,linePaint);
         firstDotClickedIndex = null;
-        lineAndBoxChecker(line,  arr, firstDotcol, firstDot,  secondDotCol,  secondDotRow);
+        player1Turn = lineAndBoxChecker(line,  arr, firstDotcol, firstDot,  secondDotCol,  secondDotRow, player1Turn);
+        winChecker();
+
+
+
         player1Turn = !player1Turn;
 
         imageView.invalidate();
@@ -205,12 +207,39 @@ public class gameActivity extends AppCompatActivity {
         // fill rectangle
         // keep and update score
         // if last edge makes a box update score and dont switch the player
-<<<<<<< Updated upstream
-        
-=======
 
-        public void lineAndBoxChecker(String line, List<String> arrayLine, int firstDotCol, int firstDotRow, int secondDotCol, int secondDotRow) {
 
+        public void winChecker (){
+        //System.out.println("t: " + total);
+
+            if(total == totalSquares){
+                String result ;
+                if(playerScore2==playerScore1){
+                    result=("Draw");
+                }
+                else if(playerScore2 > playerScore1)
+                {
+                   result=("player 2 wins");
+                }
+                else {
+                    result=("player 1 wins");
+                }
+
+            // exit to result page
+
+            System.out.println(result);
+
+            }
+
+
+        }
+
+
+
+        public boolean lineAndBoxChecker(String line, List<String> arrayLine, int firstDotCol, int firstDotRow, int secondDotCol, int secondDotRow, boolean player1Turn) {
+
+        squares = 0;
+        prevTotal = total;
           if(!line.substring(0,1).equalsIgnoreCase("-")) {
               String opposite1 = Integer.toString(firstDotRow - 1) + (line.substring(line.length() - 2));
               String adjacent1 = "-" + (line.substring(line.length() - 2, line.length() - 1)) + Integer.toString(firstDotRow - 1) + Integer.toString(firstDotRow);
@@ -222,7 +251,7 @@ public class gameActivity extends AppCompatActivity {
 
 
               if (arrayLine.contains(opposite1) && arrayLine.contains(adjacent1) && arrayLine.contains(adjacent2)) {
->>>>>>> Stashed changes
+
 
                   // add square to current player
 
@@ -259,6 +288,34 @@ public class gameActivity extends AppCompatActivity {
               }
 
           }
-            System.out.println(squares);
+
+          if(player1Turn){
+
+              playerScore1 += squares;
+
+          }
+
+          else{
+
+              playerScore2 += squares;
+
+
+          }
+          total = playerScore1+playerScore2;
+
+
+
+            System.out.println("p1 " + playerScore1);
+            System.out.println("p2 " + playerScore2);
+          if(total != prevTotal)
+          {
+              prevTotal = total;
+              return !player1Turn;
+          }
+          else{
+              prevTotal = total;
+              return player1Turn;
+          }
+
         }
     }
