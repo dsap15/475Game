@@ -8,7 +8,7 @@
     android:id="@+id/linear_layout">
 
         <ImageView
-            android:id="@+id/myimageview"
+            android:id="@+id/MyImageview"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="#d6d7d7"
