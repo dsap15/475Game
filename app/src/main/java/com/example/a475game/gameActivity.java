@@ -59,7 +59,7 @@ public class gameActivity extends AppCompatActivity {
         {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
-            imageView = (ImageView) findViewById(R.id.myimageview);
+            imageView = (ImageView) findViewById(R.id.MyImageview);
             LinearLayout linearLayout = (LinearLayout) findViewById(R.id.linear_layout);
             linearLayout.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener()
             {
@@ -220,15 +220,15 @@ public class gameActivity extends AppCompatActivity {
                 }
                 else if(playerScore2 > playerScore1)
                 {
-                   result=("player 2 wins");
+                   result=("Player 2 Wins");
                 }
                 else {
-                    result=("player 1 wins");
+                    result=("Player 1 Wins");
                 }
 
-            //    Intent intent = new Intent(gameActivity.this, ResultActivity.class);
-             //   intent.putExtra("Result",result);
-              //  startActivity(intent);
+                Intent intent = new Intent(gameActivity.this, ResultActivity.class);
+                intent.putExtra("Result",result);
+                startActivity(intent);
 
 
             // exit to result page
