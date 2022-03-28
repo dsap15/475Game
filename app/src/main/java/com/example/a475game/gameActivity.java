@@ -21,6 +21,7 @@ import android.view.ViewTreeObserver;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -33,6 +34,10 @@ public class gameActivity extends AppCompatActivity {
     private Canvas canvas;
     private Bitmap bitmap;
     private ImageView imageView;
+    private TextView player1Text;
+    private TextView player2Text;
+    private TextView p1score;
+    private TextView p2score;
     Dot[][] dots;
     private boolean player1Turn = true;
     private final int player1Color = Color.argb(127, 0, 0, 255);
@@ -45,7 +50,7 @@ public class gameActivity extends AppCompatActivity {
     private int d;
     private int playerScore1;
     private int playerScore2;
-    private int grid = 9;
+    private int grid = 7;
     private int totalSquares = (grid - 1) * (grid - 1);
     private int total =0;
     private int prevTotal =0;
@@ -61,6 +66,8 @@ public class gameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
             imageView = (ImageView) findViewById(R.id.MyImageview);
+            player1Text = findViewById(R.id.P1text);
+            player2Text = findViewById(R.id.P2text);
             LinearLayout linearLayout = (LinearLayout) findViewById(R.id.linear_layout);
             linearLayout.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener()
             {
@@ -202,6 +209,10 @@ public class gameActivity extends AppCompatActivity {
 
 
         player1Turn = !player1Turn;
+        p1score = findViewById(R.id.P1Score);
+        p1score.setText(Integer.toString(playerScore1));
+        p2score = findViewById(R.id.P2Score);
+        p2score.setText(Integer.toString(playerScore2));
 
         imageView.invalidate();
         }
