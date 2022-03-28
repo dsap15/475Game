@@ -1,4 +1,5 @@
 package com.example.a475game;
+import static java.lang.Integer.parseInt;
 import static java.lang.Math.min;
 
 import android.annotation.SuppressLint;
@@ -34,8 +35,8 @@ public class gameActivity extends AppCompatActivity {
     private ImageView imageView;
     Dot[][] dots;
     private boolean player1Turn = true;
-    private final int player1Color = Color.rgb(0, 0, 255);
-    private final int player2Color = Color.rgb(255, 0, 0);
+    private final int player1Color = Color.argb(127, 0, 0, 255);
+    private final int player2Color = Color.argb(127, 255, 0,0 );
 
     private HashSet<Dot> dotHashSet = new HashSet<Dot>();
     private List<String> arr = new ArrayList<>();
@@ -44,7 +45,7 @@ public class gameActivity extends AppCompatActivity {
     private int d;
     private int playerScore1;
     private int playerScore2;
-    private int grid = 3;
+    private int grid = 9;
     private int totalSquares = (grid - 1) * (grid - 1);
     private int total =0;
     private int prevTotal =0;
@@ -195,7 +196,7 @@ public class gameActivity extends AppCompatActivity {
         linePaint.setStrokeWidth(clickedDot.radius / 3);
         canvas.drawLine(clickedDot.x, clickedDot.y, firstDotClicked.x, firstDotClicked.y,linePaint);
         firstDotClickedIndex = null;
-        player1Turn = lineAndBoxChecker(line,  arr, firstDotcol, firstDot,  secondDotCol,  secondDotRow, player1Turn);
+        player1Turn = lineAndBoxChecker(line,  arr, firstDotcol, firstDot,  secondDotCol,  secondDotRow, player1Turn, linePaint);
         winChecker();
 
 
@@ -237,14 +238,12 @@ public class gameActivity extends AppCompatActivity {
 
             }
 
-
-
-
         }
 
 
+        public boolean lineAndBoxChecker(String line, List<String> arrayLine, int firstDotCol, int firstDotRow, int secondDotCol, int secondDotRow, boolean player1Turn, Paint linePaint) {
 
-        public boolean lineAndBoxChecker(String line, List<String> arrayLine, int firstDotCol, int firstDotRow, int secondDotCol, int secondDotRow, boolean player1Turn) {
+
 
         squares = 0;
         prevTotal = total;
@@ -259,7 +258,11 @@ public class gameActivity extends AppCompatActivity {
 
 
               if (arrayLine.contains(opposite1) && arrayLine.contains(adjacent1) && arrayLine.contains(adjacent2)) {
+                  int parsingOpposite1 = Integer.parseInt(opposite1); // checking top box
+                  int row = parsingOpposite1/100;
+                  int col1 = (parsingOpposite1 / 10) % 10;
 
+                  canvas.drawRect(dots[row][col1].x, dots[row][col1].y, dots[row+1][col1+1].x, dots[row+1][col1+1].y, linePaint);
 
                   // add square to current player
 
@@ -268,9 +271,12 @@ public class gameActivity extends AppCompatActivity {
               }
 
               if (arrayLine.contains(opposite2) && arrayLine.contains(adjacent3) && arrayLine.contains(adjacent4)) {
-
+                  int parsingLine = Integer.parseInt(line); //checking bottom box
+                  int lineRow = parsingLine/100;
+                  int lineCol1 = (parsingLine / 10) % 10;
+                  canvas.drawRect(dots[lineRow][lineCol1].x, dots[lineRow][lineCol1].y,dots[lineRow+1][lineCol1+1].x, dots[lineRow+1][lineCol1+1].y,linePaint);
                   // add square to current player
-                squares++;
+                  squares++;
               }
           }
           else{
@@ -286,12 +292,22 @@ public class gameActivity extends AppCompatActivity {
               if (arrayLine.contains(opposite1) && arrayLine.contains(adjacent1) && arrayLine.contains(adjacent2)) {
 
                   // add square to current player
+                  // left box
+                  int cornerCol = firstDotCol -1;
+                  int minRow = min(firstDotRow, secondDotRow);
+                  canvas.drawRect(dots[minRow][cornerCol].x, dots[minRow][cornerCol].y, dots[minRow+1][cornerCol+1].x, dots[minRow+1][cornerCol+1].y, linePaint);
+
                 squares++;
               }
 
               if (arrayLine.contains(opposite2) && arrayLine.contains(adjacent3) && arrayLine.contains(adjacent4)) {
 
                   // add square to current player
+                  // left box
+                  int cornerCol = firstDotCol;
+                  int minRow = min(firstDotRow, secondDotRow);
+                  canvas.drawRect(dots[minRow][cornerCol].x, dots[minRow][cornerCol].y, dots[minRow+1][cornerCol+1].x, dots[minRow+1][cornerCol+1].y, linePaint);
+
                 squares++;
               }
 
@@ -311,10 +327,8 @@ public class gameActivity extends AppCompatActivity {
           }
           total = playerScore1+playerScore2;
 
-
-
-            System.out.println("p1 " + playerScore1);
-            System.out.println("p2 " + playerScore2);
+          System.out.println("p1 " + playerScore1);
+          System.out.println("p2 " + playerScore2);
           if(total != prevTotal)
           {
               prevTotal = total;
@@ -326,4 +340,5 @@ public class gameActivity extends AppCompatActivity {
           }
 
         }
+
     }
