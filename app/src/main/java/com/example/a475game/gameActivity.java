@@ -226,9 +226,9 @@ public class gameActivity extends AppCompatActivity {
                     result=("player 1 wins");
                 }
 
-            //    Intent intent = new Intent(gameActivity.this, ResultActivity.class);
-             //   intent.putExtra("Result",result);
-              //  startActivity(intent);
+                Intent intent = new Intent(gameActivity.this, ResultActivity.class);
+                intent.putExtra("Result",result);
+                startActivity(intent);
 
 
             // exit to result page

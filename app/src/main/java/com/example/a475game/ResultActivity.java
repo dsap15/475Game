@@ -17,9 +17,13 @@ public class ResultActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.result_activity);
-       // TextView tv = findViewById(R.id.textView);
-       // String result = getIntent().getExtras().getString("Result");
-       // tv.setText(result);
+        TextView tv = findViewById(R.id.winner);
+        String result = getIntent().getExtras().getString("Result");
+        tv.setText(result);
+
+
+
+
         ImageButton back = (ImageButton) findViewById(R.id.imageButton5);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
