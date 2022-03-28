@@ -3,6 +3,7 @@ import static java.lang.Math.min;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import androidx.appcompat.app.AppCompatActivity;
@@ -225,11 +226,18 @@ public class gameActivity extends AppCompatActivity {
                     result=("player 1 wins");
                 }
 
+            //    Intent intent = new Intent(gameActivity.this, ResultActivity.class);
+             //   intent.putExtra("Result",result);
+              //  startActivity(intent);
+
+
             // exit to result page
 
             System.out.println(result);
 
             }
+
+
 
 
         }
