@@ -236,6 +236,10 @@ public class gameActivity extends AppCompatActivity {
 
 
 
+
+
+
+
         public boolean lineAndBoxChecker(String line, List<String> arrayLine, int firstDotCol, int firstDotRow, int secondDotCol, int secondDotRow, boolean player1Turn) {
 
         squares = 0;
