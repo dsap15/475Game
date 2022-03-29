@@ -9,6 +9,16 @@
     android:id="@+id/linear_layout">
 
     <TextView
+        android:id="@+id/P1Turn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/edosz"
+        android:text="Your turn"
+        android:textSize="30dp"
+        android:textColor="#000255"
+        android:visibility="invisible"/>
+
+    <TextView
         android:id="@+id/P1Score"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -52,6 +62,16 @@
         android:fontFamily="@font/edosz"
         android:text="00"
         android:textSize="50dp" />
+
+    <TextView
+        android:id="@+id/P2Turn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/edosz"
+        android:text="Your turn"
+        android:textSize="30dp"
+        android:textColor="#FF0000"
+        android:visibility="invisible"/>
 
 
 </LinearLayout>

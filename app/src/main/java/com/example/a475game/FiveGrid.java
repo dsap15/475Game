@@ -38,6 +38,8 @@ public class FiveGrid extends AppCompatActivity {
     private TextView player2Text;
     private TextView p1score;
     private TextView p2score;
+    private TextView player1TurnView;
+    private TextView player2TurnView;
     Dot[][] dots;
     private boolean player1Turn = true;
     private final int player1Color = Color.argb(127, 0, 0, 255);
@@ -65,6 +67,9 @@ public class FiveGrid extends AppCompatActivity {
         imageView = (ImageView) findViewById(R.id.MyImageview);
         player1Text = findViewById(R.id.P1text);
         player2Text = findViewById(R.id.P2text);
+        player1TurnView = findViewById(R.id.P1Turn);
+        player1TurnView.setVisibility(View.VISIBLE);
+        player2TurnView = findViewById(R.id.P2Turn);
         LinearLayout linearLayout = (LinearLayout) findViewById(R.id.linear_layout);
         linearLayout.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener()
         {
@@ -139,8 +144,6 @@ public class FiveGrid extends AppCompatActivity {
     private Index2D firstDotClickedIndex = null;
     private void onClick(float clickX, float clickY) {
 
-
-
         Index2D dotIndex = getClickedDotIndex(clickX, clickY, dots);
         if(dotIndex == null) // if the user didn't click a dot
             return;
@@ -192,17 +195,23 @@ public class FiveGrid extends AppCompatActivity {
         arr.add(line);
         System.out.println(arr);
 
-        if(player1Turn)
+        if(player1Turn) {
             linePaint.setColor(player1Color);
-        else
+            player1TurnView.setVisibility(View.INVISIBLE);
+            player2TurnView.setVisibility(View.VISIBLE);
+
+        }
+        else {
             linePaint.setColor(player2Color);
+            player1TurnView.setVisibility(View.VISIBLE);
+            player2TurnView.setVisibility(View.INVISIBLE);
+        }
 
         linePaint.setStrokeWidth(clickedDot.radius / 3);
         canvas.drawLine(clickedDot.x, clickedDot.y, firstDotClicked.x, firstDotClicked.y,linePaint);
         firstDotClickedIndex = null;
         player1Turn = lineAndBoxChecker(line,  arr, firstDotcol, firstDot,  secondDotCol,  secondDotRow, player1Turn, linePaint);
         winChecker();
-
 
 
         player1Turn = !player1Turn;
@@ -239,13 +248,9 @@ public class FiveGrid extends AppCompatActivity {
             intent.putExtra("Result",result);
             startActivity(intent);
 
-
             // exit to result page
-
             System.out.println(result);
-
         }
-
     }
 
 
@@ -271,20 +276,33 @@ public class FiveGrid extends AppCompatActivity {
                 int col1 = (parsingOpposite1 / 10) % 10;
 
                 canvas.drawRect(dots[row][col1].x, dots[row][col1].y, dots[row+1][col1+1].x, dots[row+1][col1+1].y, linePaint);
-
+                if(linePaint.getColor() == player1Color){
+                    player1TurnView.setVisibility(View.VISIBLE);
+                    player2TurnView.setVisibility(View.INVISIBLE);
+                }
+                else{
+                    player2TurnView.setVisibility(View.VISIBLE);
+                    player1TurnView.setVisibility(View.INVISIBLE);
+                }
                 // add square to current player
-
                 squares++;
-
             }
 
             if (arrayLine.contains(opposite2) && arrayLine.contains(adjacent3) && arrayLine.contains(adjacent4)) {
                 int parsingLine = Integer.parseInt(line); //checking bottom box
                 int lineRow = parsingLine/100;
                 int lineCol1 = (parsingLine / 10) % 10;
-                canvas.drawRect(dots[lineRow][lineCol1].x, dots[lineRow][lineCol1].y,dots[lineRow+1][lineCol1+1].x, dots[lineRow+1][lineCol1+1].y,linePaint);
+                canvas.drawRect(dots[lineRow][lineCol1].x, dots[lineRow][lineCol1].y, dots[lineRow+1][lineCol1+1].x, dots[lineRow+1][lineCol1+1].y, linePaint);
                 // add square to current player
                 squares++;
+                if(linePaint.getColor() == player1Color){
+                    player1TurnView.setVisibility(View.VISIBLE);
+                    player2TurnView.setVisibility(View.INVISIBLE);
+                }
+                else{
+                    player2TurnView.setVisibility(View.VISIBLE);
+                    player1TurnView.setVisibility(View.INVISIBLE);
+                }
             }
         }
         else{
@@ -296,7 +314,6 @@ public class FiveGrid extends AppCompatActivity {
             String adjacent3 = (line.substring(line.length() - 2, line.length() - 1)) + Integer.toString(firstDotCol) + Integer.toString(firstDotCol + 1);
             String adjacent4 = (line.substring(line.length() - 1)) + Integer.toString(firstDotCol) + Integer.toString(firstDotCol + 1);
 
-
             if (arrayLine.contains(opposite1) && arrayLine.contains(adjacent1) && arrayLine.contains(adjacent2)) {
 
                 // add square to current player
@@ -304,8 +321,15 @@ public class FiveGrid extends AppCompatActivity {
                 int cornerCol = firstDotCol -1;
                 int minRow = min(firstDotRow, secondDotRow);
                 canvas.drawRect(dots[minRow][cornerCol].x, dots[minRow][cornerCol].y, dots[minRow+1][cornerCol+1].x, dots[minRow+1][cornerCol+1].y, linePaint);
-
                 squares++;
+                if(linePaint.getColor() == player1Color){
+                    player1TurnView.setVisibility(View.VISIBLE);
+                    player2TurnView.setVisibility(View.INVISIBLE);
+                }
+                else{
+                    player2TurnView.setVisibility(View.VISIBLE);
+                    player1TurnView.setVisibility(View.INVISIBLE);
+                }
             }
 
             if (arrayLine.contains(opposite2) && arrayLine.contains(adjacent3) && arrayLine.contains(adjacent4)) {
@@ -315,23 +339,26 @@ public class FiveGrid extends AppCompatActivity {
                 int cornerCol = firstDotCol;
                 int minRow = min(firstDotRow, secondDotRow);
                 canvas.drawRect(dots[minRow][cornerCol].x, dots[minRow][cornerCol].y, dots[minRow+1][cornerCol+1].x, dots[minRow+1][cornerCol+1].y, linePaint);
-
                 squares++;
+                if(linePaint.getColor() == player1Color){
+                    player1TurnView.setVisibility(View.VISIBLE);
+                    player2TurnView.setVisibility(View.INVISIBLE);
+                }
+                else{
+                    player2TurnView.setVisibility(View.VISIBLE);
+                    player1TurnView.setVisibility(View.INVISIBLE);
+                }
+
             }
 
         }
 
         if(player1Turn){
-
             playerScore1 += squares;
-
         }
 
         else{
-
             playerScore2 += squares;
-
-
         }
         total = playerScore1+playerScore2;
 
@@ -346,7 +373,5 @@ public class FiveGrid extends AppCompatActivity {
             prevTotal = total;
             return player1Turn;
         }
-
     }
-
 }

@@ -38,6 +38,8 @@ public class gameActivity extends AppCompatActivity {
     private TextView player2Text;
     private TextView p1score;
     private TextView p2score;
+    private TextView player1TurnView;
+    private TextView player2TurnView;
     Dot[][] dots;
     private boolean player1Turn = true;
     private final int player1Color = Color.argb(127, 0, 0, 255);
@@ -57,38 +59,41 @@ public class gameActivity extends AppCompatActivity {
 
 
     @SuppressLint("ClickableViewAccessibility")
-        @Override
+    @Override
     protected void onCreate(Bundle savedInstanceState)
-        {
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
-            imageView = (ImageView) findViewById(R.id.MyImageview);
-            player1Text = findViewById(R.id.P1text);
-            player2Text = findViewById(R.id.P2text);
-            LinearLayout linearLayout = (LinearLayout) findViewById(R.id.linear_layout);
-            linearLayout.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener()
+        imageView = (ImageView) findViewById(R.id.MyImageview);
+        player1Text = findViewById(R.id.P1text);
+        player2Text = findViewById(R.id.P2text);
+        player1TurnView = findViewById(R.id.P1Turn);
+        player1TurnView.setVisibility(View.VISIBLE);
+        player2TurnView = findViewById(R.id.P2Turn);
+        LinearLayout linearLayout = (LinearLayout) findViewById(R.id.linear_layout);
+        linearLayout.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener()
+        {
+            @Override
+            public void onGlobalLayout() {
+                linearLayout.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+                bitmap = Bitmap.createBitmap(imageView.getWidth(), imageView.getHeight(), Bitmap.Config.ARGB_8888);
+                canvas = new Canvas(bitmap);
+                imageView.setImageBitmap(bitmap);
+                dots = generateDotGrid(grid, imageView.getWidth(), imageView.getHeight());
+                drawDots(dots, canvas);
+            }
+        });
+        imageView.setOnTouchListener(new View.OnTouchListener()
+        {
+            public boolean onTouch(View v, MotionEvent event)
             {
-                @Override
-                public void onGlobalLayout() {
-                    linearLayout.getViewTreeObserver().removeOnGlobalLayoutListener(this);
-                    bitmap = Bitmap.createBitmap(imageView.getWidth(), imageView.getHeight(), Bitmap.Config.ARGB_8888);
-                    canvas = new Canvas(bitmap);
-                    imageView.setImageBitmap(bitmap);
-                    dots = generateDotGrid(grid, imageView.getWidth(), imageView.getHeight());
-                    drawDots(dots, canvas);
-                }
-            });
-            imageView.setOnTouchListener(new View.OnTouchListener()
-            {
-                public boolean onTouch(View v, MotionEvent event)
-                {
-                    if (event.getAction() == MotionEvent.ACTION_DOWN)
-                        onClick(event.getX(), event.getY());
-                    return true;
-                }
-            });
+                if (event.getAction() == MotionEvent.ACTION_DOWN)
+                    onClick(event.getX(), event.getY());
+                return true;
+            }
+        });
 
-        }
+    }
     private Dot[][] generateDotGrid(int numDots, int screenWidth, int screenHeight) {
         float borderProportion = 0.2f;
 
@@ -135,11 +140,9 @@ public class gameActivity extends AppCompatActivity {
         }
         return index2D;
     }
-        //Player(s) Score
+    //Player(s) Score
     private Index2D firstDotClickedIndex = null;
     private void onClick(float clickX, float clickY) {
-
-
 
         Index2D dotIndex = getClickedDotIndex(clickX, clickY, dots);
         if(dotIndex == null) // if the user didn't click a dot
@@ -192,17 +195,23 @@ public class gameActivity extends AppCompatActivity {
         arr.add(line);
         System.out.println(arr);
 
-        if(player1Turn)
+        if(player1Turn) {
             linePaint.setColor(player1Color);
-        else
+            player1TurnView.setVisibility(View.INVISIBLE);
+            player2TurnView.setVisibility(View.VISIBLE);
+
+        }
+        else {
             linePaint.setColor(player2Color);
+            player1TurnView.setVisibility(View.VISIBLE);
+            player2TurnView.setVisibility(View.INVISIBLE);
+        }
 
         linePaint.setStrokeWidth(clickedDot.radius / 3);
         canvas.drawLine(clickedDot.x, clickedDot.y, firstDotClicked.x, firstDotClicked.y,linePaint);
         firstDotClickedIndex = null;
         player1Turn = lineAndBoxChecker(line,  arr, firstDotcol, firstDot,  secondDotCol,  secondDotRow, player1Turn, linePaint);
         winChecker();
-
 
 
         player1Turn = !player1Turn;
@@ -212,141 +221,157 @@ public class gameActivity extends AppCompatActivity {
         p2score.setText(Integer.toString(playerScore2));
 
         imageView.invalidate();
-        }
-        /// we need to:
-        // fill rectangle
-        // keep and update score
-        // if last edge makes a box update score and dont switch the player
+    }
+    /// we need to:
+    // fill rectangle
+    // keep and update score
+    // if last edge makes a box update score and dont switch the player
 
 
-        public void winChecker (){
+    public void winChecker (){
         //System.out.println("t: " + total);
 
-            if(total == totalSquares){
-                String result ;
-                if(playerScore2==playerScore1){
-                    result=("Draw");
-                }
-                else if(playerScore2 > playerScore1)
-                {
-                   result=("Player 2 Wins");
-                }
-                else {
-                    result=("Player 1 Wins");
-                }
-
-                Intent intent = new Intent(gameActivity.this, ResultActivity.class);
-                intent.putExtra("Result",result);
-                startActivity(intent);
-
-
-            // exit to result page
-
-            System.out.println(result);
-
+        if(total == totalSquares){
+            String result ;
+            if(playerScore2==playerScore1){
+                result=("Draw");
+            }
+            else if(playerScore2 > playerScore1)
+            {
+                result=("Player 2 Wins");
+            }
+            else {
+                result=("Player 1 Wins");
             }
 
+            Intent intent = new Intent(gameActivity.this, ResultActivity.class);
+            intent.putExtra("Result",result);
+            startActivity(intent);
+
+            // exit to result page
+            System.out.println(result);
         }
+    }
 
 
-        public boolean lineAndBoxChecker(String line, List<String> arrayLine, int firstDotCol, int firstDotRow, int secondDotCol, int secondDotRow, boolean player1Turn, Paint linePaint) {
+    public boolean lineAndBoxChecker(String line, List<String> arrayLine, int firstDotCol, int firstDotRow, int secondDotCol, int secondDotRow, boolean player1Turn, Paint linePaint) {
 
 
 
         squares = 0;
         prevTotal = total;
-          if(!line.substring(0,1).equalsIgnoreCase("-")) {
-              String opposite1 = Integer.toString(firstDotRow - 1) + (line.substring(line.length() - 2));
-              String adjacent1 = "-" + (line.substring(line.length() - 2, line.length() - 1)) + Integer.toString(firstDotRow - 1) + Integer.toString(firstDotRow);
-              String adjacent2 = "-" + (line.substring(line.length() - 1)) + Integer.toString(firstDotRow - 1) + Integer.toString(firstDotRow);
+        if(!line.substring(0,1).equalsIgnoreCase("-")) {
+            String opposite1 = Integer.toString(firstDotRow - 1) + (line.substring(line.length() - 2));
+            String adjacent1 = "-" + (line.substring(line.length() - 2, line.length() - 1)) + Integer.toString(firstDotRow - 1) + Integer.toString(firstDotRow);
+            String adjacent2 = "-" + (line.substring(line.length() - 1)) + Integer.toString(firstDotRow - 1) + Integer.toString(firstDotRow);
 
-              String opposite2 = Integer.toString(firstDotRow + 1) + (line.substring(line.length() - 2));
-              String adjacent3 = "-" + (line.substring(line.length() - 2, line.length() - 1)) + Integer.toString(firstDotRow) + Integer.toString(firstDotRow + 1);
-              String adjacent4 = "-" + (line.substring(line.length() - 1)) + Integer.toString(firstDotRow) + Integer.toString(firstDotRow + 1);
-
-
-              if (arrayLine.contains(opposite1) && arrayLine.contains(adjacent1) && arrayLine.contains(adjacent2)) {
-                  int parsingOpposite1 = Integer.parseInt(opposite1); // checking top box
-                  int row = parsingOpposite1/100;
-                  int col1 = (parsingOpposite1 / 10) % 10;
-
-                  canvas.drawRect(dots[row][col1].x, dots[row][col1].y, dots[row+1][col1+1].x, dots[row+1][col1+1].y, linePaint);
-
-                  // add square to current player
-
-                  squares++;
-
-              }
-
-              if (arrayLine.contains(opposite2) && arrayLine.contains(adjacent3) && arrayLine.contains(adjacent4)) {
-                  int parsingLine = Integer.parseInt(line); //checking bottom box
-                  int lineRow = parsingLine/100;
-                  int lineCol1 = (parsingLine / 10) % 10;
-                  canvas.drawRect(dots[lineRow][lineCol1].x, dots[lineRow][lineCol1].y,dots[lineRow+1][lineCol1+1].x, dots[lineRow+1][lineCol1+1].y,linePaint);
-                  // add square to current player
-                  squares++;
-              }
-          }
-          else{
-              String opposite1 = "-"+Integer.toString(firstDotCol- 1) + (line.substring(line.length() - 2));
-              String adjacent1 = (line.substring(line.length() - 2, line.length() - 1)) + Integer.toString(firstDotCol - 1) + Integer.toString(firstDotCol);
-              String adjacent2 = (line.substring(line.length() - 1)) + Integer.toString(firstDotCol- 1) + Integer.toString(firstDotCol);
-
-              String opposite2 = "-" + Integer.toString(firstDotCol + 1) + (line.substring(line.length() - 2));
-              String adjacent3 = (line.substring(line.length() - 2, line.length() - 1)) + Integer.toString(firstDotCol) + Integer.toString(firstDotCol + 1);
-              String adjacent4 = (line.substring(line.length() - 1)) + Integer.toString(firstDotCol) + Integer.toString(firstDotCol + 1);
+            String opposite2 = Integer.toString(firstDotRow + 1) + (line.substring(line.length() - 2));
+            String adjacent3 = "-" + (line.substring(line.length() - 2, line.length() - 1)) + Integer.toString(firstDotRow) + Integer.toString(firstDotRow + 1);
+            String adjacent4 = "-" + (line.substring(line.length() - 1)) + Integer.toString(firstDotRow) + Integer.toString(firstDotRow + 1);
 
 
-              if (arrayLine.contains(opposite1) && arrayLine.contains(adjacent1) && arrayLine.contains(adjacent2)) {
+            if (arrayLine.contains(opposite1) && arrayLine.contains(adjacent1) && arrayLine.contains(adjacent2)) {
+                int parsingOpposite1 = Integer.parseInt(opposite1); // checking top box
+                int row = parsingOpposite1/100;
+                int col1 = (parsingOpposite1 / 10) % 10;
 
-                  // add square to current player
-                  // left box
-                  int cornerCol = firstDotCol -1;
-                  int minRow = min(firstDotRow, secondDotRow);
-                  canvas.drawRect(dots[minRow][cornerCol].x, dots[minRow][cornerCol].y, dots[minRow+1][cornerCol+1].x, dots[minRow+1][cornerCol+1].y, linePaint);
-
+                canvas.drawRect(dots[row][col1].x, dots[row][col1].y, dots[row+1][col1+1].x, dots[row+1][col1+1].y, linePaint);
+                if(linePaint.getColor() == player1Color){
+                    player1TurnView.setVisibility(View.VISIBLE);
+                    player2TurnView.setVisibility(View.INVISIBLE);
+                }
+                else{
+                    player2TurnView.setVisibility(View.VISIBLE);
+                    player1TurnView.setVisibility(View.INVISIBLE);
+                }
+                // add square to current player
                 squares++;
-              }
+            }
 
-              if (arrayLine.contains(opposite2) && arrayLine.contains(adjacent3) && arrayLine.contains(adjacent4)) {
-
-                  // add square to current player
-                  // left box
-                  int cornerCol = firstDotCol;
-                  int minRow = min(firstDotRow, secondDotRow);
-                  canvas.drawRect(dots[minRow][cornerCol].x, dots[minRow][cornerCol].y, dots[minRow+1][cornerCol+1].x, dots[minRow+1][cornerCol+1].y, linePaint);
-
+            if (arrayLine.contains(opposite2) && arrayLine.contains(adjacent3) && arrayLine.contains(adjacent4)) {
+                int parsingLine = Integer.parseInt(line); //checking bottom box
+                int lineRow = parsingLine/100;
+                int lineCol1 = (parsingLine / 10) % 10;
+                canvas.drawRect(dots[lineRow][lineCol1].x, dots[lineRow][lineCol1].y, dots[lineRow+1][lineCol1+1].x, dots[lineRow+1][lineCol1+1].y, linePaint);
+                // add square to current player
                 squares++;
-              }
+                if(linePaint.getColor() == player1Color){
+                    player1TurnView.setVisibility(View.VISIBLE);
+                    player2TurnView.setVisibility(View.INVISIBLE);
+                }
+                else{
+                    player2TurnView.setVisibility(View.VISIBLE);
+                    player1TurnView.setVisibility(View.INVISIBLE);
+                }
+            }
+        }
+        else{
+            String opposite1 = "-"+Integer.toString(firstDotCol- 1) + (line.substring(line.length() - 2));
+            String adjacent1 = (line.substring(line.length() - 2, line.length() - 1)) + Integer.toString(firstDotCol - 1) + Integer.toString(firstDotCol);
+            String adjacent2 = (line.substring(line.length() - 1)) + Integer.toString(firstDotCol- 1) + Integer.toString(firstDotCol);
 
-          }
+            String opposite2 = "-" + Integer.toString(firstDotCol + 1) + (line.substring(line.length() - 2));
+            String adjacent3 = (line.substring(line.length() - 2, line.length() - 1)) + Integer.toString(firstDotCol) + Integer.toString(firstDotCol + 1);
+            String adjacent4 = (line.substring(line.length() - 1)) + Integer.toString(firstDotCol) + Integer.toString(firstDotCol + 1);
 
-          if(player1Turn){
+            if (arrayLine.contains(opposite1) && arrayLine.contains(adjacent1) && arrayLine.contains(adjacent2)) {
 
-              playerScore1 += squares;
+                // add square to current player
+                // left box
+                int cornerCol = firstDotCol -1;
+                int minRow = min(firstDotRow, secondDotRow);
+                canvas.drawRect(dots[minRow][cornerCol].x, dots[minRow][cornerCol].y, dots[minRow+1][cornerCol+1].x, dots[minRow+1][cornerCol+1].y, linePaint);
+                squares++;
+                if(linePaint.getColor() == player1Color){
+                    player1TurnView.setVisibility(View.VISIBLE);
+                    player2TurnView.setVisibility(View.INVISIBLE);
+                }
+                else{
+                    player2TurnView.setVisibility(View.VISIBLE);
+                    player1TurnView.setVisibility(View.INVISIBLE);
+                }
+            }
 
-          }
+            if (arrayLine.contains(opposite2) && arrayLine.contains(adjacent3) && arrayLine.contains(adjacent4)) {
 
-          else{
+                // add square to current player
+                // left box
+                int cornerCol = firstDotCol;
+                int minRow = min(firstDotRow, secondDotRow);
+                canvas.drawRect(dots[minRow][cornerCol].x, dots[minRow][cornerCol].y, dots[minRow+1][cornerCol+1].x, dots[minRow+1][cornerCol+1].y, linePaint);
+                squares++;
+                if(linePaint.getColor() == player1Color){
+                    player1TurnView.setVisibility(View.VISIBLE);
+                    player2TurnView.setVisibility(View.INVISIBLE);
+                }
+                else{
+                    player2TurnView.setVisibility(View.VISIBLE);
+                    player1TurnView.setVisibility(View.INVISIBLE);
+                }
 
-              playerScore2 += squares;
-
-
-          }
-          total = playerScore1+playerScore2;
-
-          System.out.println("p1 " + playerScore1);
-          System.out.println("p2 " + playerScore2);
-          if(total != prevTotal)
-          {
-              prevTotal = total;
-              return !player1Turn;
-          }
-          else{
-              prevTotal = total;
-              return player1Turn;
-          }
+            }
 
         }
 
+        if(player1Turn){
+            playerScore1 += squares;
+        }
+
+        else{
+            playerScore2 += squares;
+        }
+        total = playerScore1+playerScore2;
+
+        System.out.println("p1 " + playerScore1);
+        System.out.println("p2 " + playerScore2);
+        if(total != prevTotal)
+        {
+            prevTotal = total;
+            return !player1Turn;
+        }
+        else{
+            prevTotal = total;
+            return player1Turn;
+        }
     }
+}
