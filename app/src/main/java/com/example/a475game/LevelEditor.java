@@ -21,6 +21,20 @@ public class LevelEditor extends AppCompatActivity {
                 startActivity(new Intent(LevelEditor.this, MainActivity.class));
             }
         });
+        ImageButton threeGridButton = (ImageButton) findViewById(R.id.option3x3);
+        threeGridButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(LevelEditor.this, gameActivity.class));
+            }
+        });
+        ImageButton fiveGridButton = (ImageButton) findViewById(R.id.option5x5);
+        fiveGridButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(LevelEditor.this, FiveGrid.class));
+            }
+        });
 
 
         }

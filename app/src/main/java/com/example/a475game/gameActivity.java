@@ -42,15 +42,12 @@ public class gameActivity extends AppCompatActivity {
     private boolean player1Turn = true;
     private final int player1Color = Color.argb(127, 0, 0, 255);
     private final int player2Color = Color.argb(127, 255, 0,0 );
-
-    private HashSet<Dot> dotHashSet = new HashSet<Dot>();
     private List<String> arr = new ArrayList<>();
-    //private String [] arr = new String[12];
     private int squares =0;
     private int d;
     private int playerScore1;
     private int playerScore2;
-    private int grid = 7;
+    private int grid = 3;
     private int totalSquares = (grid - 1) * (grid - 1);
     private int total =0;
     private int prevTotal =0;
