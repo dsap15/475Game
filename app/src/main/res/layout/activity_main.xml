@@ -61,5 +61,16 @@
         app:layout_constraintVertical_bias="0.884"
         app:srcCompat="@drawable/gear" />
 
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="257dp"
+        android:layout_height="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton3"
+        app:layout_constraintVertical_bias="0.855"
+        app:srcCompat="@drawable/ver_numtemp" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
