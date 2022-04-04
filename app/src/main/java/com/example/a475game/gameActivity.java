@@ -49,7 +49,7 @@ public class gameActivity extends AppCompatActivity {
     private int d;
     private int playerScore1;
     private int playerScore2;
-    private int grid = 3;
+    public static int grid;
     private int totalSquares = (grid - 1) * (grid - 1);
     private int total =0;
     private int prevTotal =0;
@@ -94,6 +94,8 @@ public class gameActivity extends AppCompatActivity {
         });
 
     }
+
+
     private Dot[][] generateDotGrid(int numDots, int screenWidth, int screenHeight) {
         float borderProportion = 0.2f;
 

@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         quickPlay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                gameActivity.grid = 3;
                 startActivity(new Intent(MainActivity.this,gameActivity.class));
             }
         });
