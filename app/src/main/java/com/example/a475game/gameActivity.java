@@ -65,6 +65,10 @@ public class gameActivity extends AppCompatActivity {
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
+
+        // Add sound with timer
+
+
         imageView = (ImageView) findViewById(R.id.MyImageview);
         player1Text = findViewById(R.id.P1text);
         player2Text = findViewById(R.id.P2text);

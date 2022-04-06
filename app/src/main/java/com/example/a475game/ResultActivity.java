@@ -17,6 +17,10 @@ public class ResultActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.result_activity);
+
+        // Add sound with timer
+
+
         TextView tv = findViewById(R.id.winner);
         String result = getIntent().getExtras().getString("Result");
         tv.setText(result);
