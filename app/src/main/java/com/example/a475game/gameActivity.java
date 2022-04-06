@@ -213,6 +213,8 @@ public class gameActivity extends AppCompatActivity {
         }
 
         linePaint.setStrokeWidth(clickedDot.radius / 3);
+
+        //sound
         MediaPlayer ring= MediaPlayer.create(gameActivity.this,R.raw.ring);
         ring.start();
         canvas.drawLine(clickedDot.x, clickedDot.y, firstDotClicked.x, firstDotClicked.y,linePaint);
