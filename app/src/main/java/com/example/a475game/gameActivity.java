@@ -14,6 +14,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.RectF;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
@@ -87,8 +88,10 @@ public class gameActivity extends AppCompatActivity {
         {
             public boolean onTouch(View v, MotionEvent event)
             {
+
                 if (event.getAction() == MotionEvent.ACTION_DOWN)
                     onClick(event.getX(), event.getY());
+
                 return true;
             }
         });
@@ -210,6 +213,8 @@ public class gameActivity extends AppCompatActivity {
         }
 
         linePaint.setStrokeWidth(clickedDot.radius / 3);
+        MediaPlayer ring= MediaPlayer.create(gameActivity.this,R.raw.ring);
+        ring.start();
         canvas.drawLine(clickedDot.x, clickedDot.y, firstDotClicked.x, firstDotClicked.y,linePaint);
         firstDotClickedIndex = null;
         player1Turn = lineAndBoxChecker(line,  arr, firstDotcol, firstDot,  secondDotCol,  secondDotRow, player1Turn, linePaint);
