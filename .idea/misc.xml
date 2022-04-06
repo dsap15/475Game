@@ -16,6 +16,7 @@
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.10507246376811594" />
         <entry key="app/src/main/res/layout/activity_tutorial.xml" value="0.1" />
         <entry key="app/src/main/res/layout/settings_activity.xml" value="0.1" />
+        <entry key="app/src/main/res/xml/root_preferences.xml" value="0.11041666666666666" />
       </map>
     </option>
   </component>
