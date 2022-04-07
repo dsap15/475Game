@@ -21,7 +21,7 @@ public class ResultActivity extends AppCompatActivity {
         String result = getIntent().getExtras().getString("Result");
         tv.setText(result);
 
-        ImageButton back = (ImageButton) findViewById(R.id.imageButton5);
+        ImageButton back = (ImageButton) findViewById(R.id.temp_restart_button);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

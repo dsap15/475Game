@@ -8,69 +8,111 @@
     tools:context=".MainActivity">
 
 
-    <ImageButton
-        android:id="@+id/sButton"
-        android:layout_width="149dp"
-        android:layout_height="51dp"
-        android:layout_marginTop="64dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:srcCompat="@drawable/start" />
-
-    <ImageButton
-        android:id="@+id/imageButton2"
-        android:layout_width="104dp"
-        android:layout_height="39dp"
-        android:layout_marginTop="28dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sButton"
-        app:srcCompat="@drawable/quickplay_button" />
-
-    <ImageButton
-        android:id="@+id/imageButton3"
-        android:layout_width="144dp"
-        android:layout_height="47dp"
-        android:layout_marginTop="28dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton2"
-        app:srcCompat="@drawable/tutorial" />
-
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="218dp"
-        android:layout_height="215dp"
-        android:layout_marginTop="48dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo" />
-
-    <ImageButton
-        android:id="@+id/imageButton12"
-        android:layout_width="32dp"
-        android:layout_height="39dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.912"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.884"
-        app:srcCompat="@drawable/gear" />
-
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="257dp"
-        android:layout_height="100dp"
+        android:id="@+id/version_number"
+        android:layout_width="231dp"
+        android:layout_height="78dp"
+        android:layout_marginBottom="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton3"
-        app:layout_constraintVertical_bias="0.855"
         app:srcCompat="@drawable/ver_numtemp" />
+
+    <ImageButton
+        android:id="@+id/testgearicon"
+        android:layout_width="80dp"
+        android:layout_height="67dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.993"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.985"
+        app:srcCompat="@drawable/testgearicon"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageView
+        android:id="@+id/refined_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/refined_logo" />
+
+    <ImageButton
+        android:id="@+id/start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/version_number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/refined_logo"
+        app:layout_constraintVertical_bias="0.097"
+        app:srcCompat="@drawable/temp_start_button" />
+
+    <ImageButton
+        android:id="@+id/tutorial"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/version_number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/refined_logo"
+        app:srcCompat="@drawable/temp_tutorial_button" />
+
+    <ImageButton
+        android:id="@+id/quickplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/version_number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/refined_logo"
+        app:layout_constraintVertical_bias="0.88"
+        app:srcCompat="@drawable/temp_quickplay_button" />
+
+    <TextView
+        android:id="@+id/start_text"
+        android:layout_width="118dp"
+        android:layout_height="66dp"
+        android:fontFamily="@font/edosz"
+        android:text="START"
+        android:textColor="#FF0000"
+        android:textSize="45sp"
+        app:layout_constraintBottom_toBottomOf="@+id/start"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/start" />
+
+    <TextView
+        android:id="@+id/tutorial_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/edosz"
+        android:text="TUTORIAL"
+        android:textColor="#FF0000"
+        android:textSize="45sp"
+        app:layout_constraintBottom_toBottomOf="@+id/quickplay"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/quickplay" />
+
+    <TextView
+        android:id="@+id/quickplay_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/edosz"
+        android:text="QUICKPLAY"
+        android:textColor="#FF0000"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tutorial"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tutorial" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

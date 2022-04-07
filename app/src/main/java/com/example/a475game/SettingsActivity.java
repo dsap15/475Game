@@ -22,7 +22,7 @@ public class SettingsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.settings_activity);
-        ImageButton back = (ImageButton) findViewById(R.id.imageButton5);
+        ImageButton back = (ImageButton) findViewById(R.id.testbackbuttonsettings);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
