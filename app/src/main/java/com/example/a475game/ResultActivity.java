@@ -3,6 +3,7 @@ package com.example.a475game;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -17,10 +18,6 @@ public class ResultActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.result_activity);
-
-        // Add sound with timer
-
-
         TextView tv = findViewById(R.id.winner);
         String result = getIntent().getExtras().getString("Result");
         tv.setText(result);
@@ -32,7 +29,10 @@ public class ResultActivity extends AppCompatActivity {
                 startActivity(new Intent(ResultActivity.this, MainActivity.class));
             }
         });
-        
+
+        // Add sound with timer
+        MediaPlayer resultsound= MediaPlayer.create(ResultActivity.this,R.raw.resultsound);
+        resultsound.start();
 
     }
 }

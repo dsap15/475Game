@@ -4,6 +4,7 @@ import android.app.UiModeManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.AudioManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -18,6 +19,7 @@ import androidx.appcompat.app.AppCompatDelegate;
 
 public class SettingsActivity extends AppCompatActivity {
 
+    public static boolean settingBoolean;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +31,51 @@ public class SettingsActivity extends AppCompatActivity {
                 startActivity(new Intent(SettingsActivity.this, MainActivity.class));
             }
         });
+
+
+
+
+        ToggleButton button3 = findViewById(R.id.toggleButton);
+        //button3.setText(SoundVal);
+        SharedPreferences sharedPreferences2 = getSharedPreferences("save2", MODE_PRIVATE);
+        button3.setChecked(sharedPreferences2.getBoolean("value2", true));
+        if (button3.isChecked()) {
+            AudioManager amanager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+            amanager.setStreamMute(AudioManager.STREAM_NOTIFICATION, true);
+        }
+        else {
+            AudioManager amanager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+            amanager.setStreamMute(AudioManager.STREAM_NOTIFICATION, false);
+        }
+
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view)
+            {
+                boolean clicked = button3.isChecked();
+                if(clicked) {
+
+                    AudioManager amanager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+                    amanager.setStreamMute(AudioManager.STREAM_NOTIFICATION, true);
+
+                    SharedPreferences.Editor editor = getSharedPreferences("save2", MODE_PRIVATE).edit();
+                    editor.putBoolean("value2", true);
+                    editor.apply();
+                    button3.setChecked(true);
+                }
+                else {
+                    AudioManager amanager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+                    amanager.setStreamMute(AudioManager.STREAM_NOTIFICATION, false);
+                    SharedPreferences.Editor editor = getSharedPreferences("save2", MODE_PRIVATE).edit();
+                    editor.putBoolean("value2",false);
+                    editor.apply();
+                    button3.setChecked(false);
+                }
+            }
+        });
+
+
+
 
         ToggleButton darkModeBtn = findViewById(R.id.toggleButton3);
         SharedPreferences sharedPreferences = getSharedPreferences("save", MODE_PRIVATE);
