@@ -1,5 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">475Game</string>
     <string name="title_activity_back_button_test">BackButtonTest</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
@@ -11,7 +11,7 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="title_activity_settings">SettingsActivity</string>
+
 
     <!-- Preference Titles -->
     <string name="messages_header">Messages</string>
@@ -26,14 +26,16 @@
     <string name="attachment_title">Download incoming attachments</string>
     <string name="attachment_summary_on">Automatically download attachments for incoming emails
     </string>
-    <string name="language">English</string>
-    <string name="SoundOn">SOUNDS: ON</string>
-    <string name="SoundOff">SOUNDS: OFF</string>
-    <string name="DarkModeOn">DARK MODE: ON</string>
-    <string name="DarkModeOff">DARK MODE: OFF</string>
-    <string name="YourTurn">Your turn</string>
-    <string name="player1">Player 1</string>
-    <string name="player2">Player 2</string>
-    <string name="Winner">Winner</string>
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <string name="language">French</string>
+    <string name="SoundOn">Son: Activé</string>
+    <string name="SoundOff">Son: Désactivé</string>
+    <string name="DarkModeOn">Mode Sombre : Activé</string>
+    <string name="DarkModeOff">Mode sombre : désactivé</string>
+    <string name="YourTurn">À ton tour</string>
+    <string name="player1">Joueur 1</string>
+    <string name="player2">Joueur 2</string>
+    <string name="Winner">Gagnant</string>
+    <string name="title_activity_settings">Settings</string>
+    <string name="app_name">TirthApp</string>
 </resources>

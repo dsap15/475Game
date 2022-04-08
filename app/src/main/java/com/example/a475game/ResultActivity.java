@@ -31,8 +31,8 @@ public class ResultActivity extends AppCompatActivity {
         });
 
         // Add sound with timer
-        MediaPlayer resultsound= MediaPlayer.create(ResultActivity.this,R.raw.resultsound);
-        resultsound.start();
+        MediaPlayer resultSound= MediaPlayer.create(ResultActivity.this,R.raw.resultsound);
+        resultSound.start();
 
     }
 }

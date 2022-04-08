@@ -4,27 +4,60 @@ import android.app.UiModeManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.media.AudioManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.ToggleButton;
 
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
+import java.util.Locale;
+
 
 public class SettingsActivity extends AppCompatActivity {
 
     public static boolean settingBoolean;
+    TextView messageView;
+    Button btnFrench, btnEnglish;
+    Context context;
+    Resources resources;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.settings_activity);
         ImageButton back = (ImageButton) findViewById(R.id.imageButton5);
+
+
+        btnFrench = findViewById(R.id.button2);
+        btnEnglish = findViewById(R.id.button);
+
+        // setting up on click listener event over the button
+        // in order to change the language with the help of
+        // LocaleHelper class
+        btnEnglish.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                localsetter("en");
+            }
+        });
+
+        btnFrench.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                localsetter("fr");
+            }
+        });
+
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -111,6 +144,18 @@ public class SettingsActivity extends AppCompatActivity {
 
 
 
+    }
+
+    public void localsetter (String language){
+        Locale newLocal = new Locale(language);
+        Resources res = getResources();
+        DisplayMetrics mat = res.getDisplayMetrics();
+        Configuration config = res.getConfiguration();
+        config.locale = newLocal;
+        res.updateConfiguration(config,mat);
+        Intent reset = new Intent(this,SettingsActivity.class);
+        finish();
+        startActivity(reset);
     }
 
 

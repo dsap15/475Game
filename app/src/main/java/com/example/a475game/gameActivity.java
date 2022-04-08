@@ -5,6 +5,7 @@ import static java.lang.Math.min;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,6 +24,7 @@ import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewTreeObserver;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -124,7 +126,9 @@ public class gameActivity extends AppCompatActivity {
         // box finish sound
         Square_sound = sound_effects.load(this,R.raw.squaresound,5);
         // result sound
-        Result_sound = sound_effects.load(this,R.raw.resultsound,0);
+      //  Result_sound = sound_effects.load(this,R.raw.resultsound,0);
+
+
 
 
     }
