@@ -3,8 +3,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/backgroundColord"
+    android:background="@color/backgroundColor"
     tools:context=".SettingsActivity">
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="188dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginLeft="76dp"
+        android:layout_marginTop="25dp"
+        android:background="#03A9F4"
+        android:text="French"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.238"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner5"
+        app:layout_constraintVertical_bias="0.451" />
 
     <Spinner
         android:id="@+id/spinner5"
@@ -18,9 +35,10 @@
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toggleButton3"
-        app:layout_constraintVertical_bias="0.152" />
+        app:layout_constraintVertical_bias="0.117" />
 
     <ToggleButton
         android:id="@+id/toggleButton"
@@ -30,8 +48,8 @@
         android:background="#03A9F4"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#000000"
-        android:textOff="SOUNDS: OFF"
-        android:textOn="SOUNDS: ON"
+        android:textOff="@string/SoundOn"
+        android:textOn="@string/SoundOff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
@@ -47,8 +65,8 @@
         android:background="#03A9F4"
         android:text="ToggleButton"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textOff="DARK MODE: OFF"
-        android:textOn="DARK MODE: ON"
+        android:textOff="@string/DarkModeOff"
+        android:textOn="@string/DarkModeOn"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -67,5 +85,22 @@
         app:srcCompat="@drawable/testbackbuttoniconsettings"
         tools:ignore="SpeakableTextPresentCheck"
         tools:layout_editor_absoluteY="0dp" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="185dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginLeft="76dp"
+        android:layout_marginTop="25dp"
+        android:background="#03A9F4"
+        android:text="English"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.253"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner5"
+        app:layout_constraintVertical_bias="0.024" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

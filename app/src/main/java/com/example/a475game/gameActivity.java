@@ -5,6 +5,7 @@ import static java.lang.Math.min;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,11 +15,16 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.RectF;
+import android.media.AudioAttributes;
+import android.media.AudioManager;
 import android.media.MediaPlayer;
+import android.media.SoundPool;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewTreeObserver;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -54,6 +60,8 @@ public class gameActivity extends AppCompatActivity {
     private int totalSquares = (grid - 1) * (grid - 1);
     private int total =0;
     private int prevTotal =0;
+    private int max,button_sound_int,Square_sound,Result_sound;
+    private SoundPool sound_effects;
 
 
 
@@ -65,6 +73,9 @@ public class gameActivity extends AppCompatActivity {
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
+
+
+
         imageView = (ImageView) findViewById(R.id.MyImageview);
         player1Text = findViewById(R.id.P1text);
         player2Text = findViewById(R.id.P2text);
@@ -95,6 +106,30 @@ public class gameActivity extends AppCompatActivity {
                 return true;
             }
         });
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
+
+            AudioAttributes audioAttributes = new AudioAttributes.Builder()
+                    .setUsage(AudioAttributes.USAGE_ASSISTANCE_SONIFICATION)
+                    .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+                    .build();
+            sound_effects = new SoundPool.Builder()
+                    .setMaxStreams(1)
+                    .setAudioAttributes(audioAttributes)
+                    .build();
+        }
+        else {
+            sound_effects = new SoundPool(5, AudioManager.STREAM_MUSIC, 0);
+        }
+        // line drawing sound
+        button_sound_int = sound_effects.load(this, R.raw.ring, 10);
+        // box finish sound
+        Square_sound = sound_effects.load(this,R.raw.squaresound,5);
+        // result sound
+      //  Result_sound = sound_effects.load(this,R.raw.resultsound,0);
+
+
+
 
     }
 
@@ -150,15 +185,15 @@ public class gameActivity extends AppCompatActivity {
     private void onClick(float clickX, float clickY) {
 
         Index2D dotIndex = getClickedDotIndex(clickX, clickY, dots);
-        if(dotIndex == null) // if the user didn't click a dot
+        if (dotIndex == null) // if the user didn't click a dot
             return;
 
-        if(firstDotClickedIndex == null){
+        if (firstDotClickedIndex == null) {
             firstDotClickedIndex = dotIndex;
             return;
         }
 
-        if(!dotIndex.isAdjacentTo(firstDotClickedIndex)){
+        if (!dotIndex.isAdjacentTo(firstDotClickedIndex)) {
             firstDotClickedIndex = dotIndex;
             return;
         }
@@ -175,24 +210,21 @@ public class gameActivity extends AppCompatActivity {
         String line;
 
         //String line = Integer.toString(firstDot) + Integer.toString(firstDotcol)+ Integer.toString(clickedDotS)+ Integer.toString(clickedDotcol);
-        if(firstDot == secondDotRow){
-            if(firstDotcol < secondDotCol){
+        if (firstDot == secondDotRow) {
+            if (firstDotcol < secondDotCol) {
                 line = Integer.toString(firstDot) + Integer.toString(firstDotcol) + Integer.toString(secondDotCol);
-            }
-            else{
+            } else {
                 line = Integer.toString(firstDot) + Integer.toString(secondDotCol) + Integer.toString(firstDotcol);
             }
-        }
-        else{
-            if(firstDot < secondDotRow){
-                line = "-"+Integer.toString(firstDotcol) +Integer.toString(firstDot) + Integer.toString(secondDotRow);
-            }
-            else{
-                line = "-"+Integer.toString(firstDotcol) +Integer.toString(secondDotRow) + Integer.toString(firstDot);
+        } else {
+            if (firstDot < secondDotRow) {
+                line = "-" + Integer.toString(firstDotcol) + Integer.toString(firstDot) + Integer.toString(secondDotRow);
+            } else {
+                line = "-" + Integer.toString(firstDotcol) + Integer.toString(secondDotRow) + Integer.toString(firstDot);
             }
         }
 
-        if(arr.contains(line)){
+        if (arr.contains(line)) {
             firstDotClickedIndex = dotIndex;
             return;
         }
@@ -200,13 +232,12 @@ public class gameActivity extends AppCompatActivity {
         arr.add(line);
         System.out.println(arr);
 
-        if(player1Turn) {
+        if (player1Turn) {
             linePaint.setColor(player1Color);
             player1TurnView.setVisibility(View.INVISIBLE);
             player2TurnView.setVisibility(View.VISIBLE);
 
-        }
-        else {
+        } else {
             linePaint.setColor(player2Color);
             player1TurnView.setVisibility(View.VISIBLE);
             player2TurnView.setVisibility(View.INVISIBLE);
@@ -215,8 +246,21 @@ public class gameActivity extends AppCompatActivity {
         linePaint.setStrokeWidth(clickedDot.radius / 3);
 
         //sound
-        MediaPlayer ring= MediaPlayer.create(gameActivity.this,R.raw.ring);
-        ring.start();
+//        if (SettingsActivity.settingBoolean = true) {
+//
+//
+//
+//
+//
+//
+//        }
+//        else if (SettingsActivity.settingBoolean=false){
+//            return;
+//        }
+
+        //playing sound
+        sound_effects.play(button_sound_int,1,1,0,0,1);
+
         canvas.drawLine(clickedDot.x, clickedDot.y, firstDotClicked.x, firstDotClicked.y,linePaint);
         firstDotClickedIndex = null;
         player1Turn = lineAndBoxChecker(line,  arr, firstDotcol, firstDot,  secondDotCol,  secondDotRow, player1Turn, linePaint);
@@ -240,10 +284,12 @@ public class gameActivity extends AppCompatActivity {
     public void winChecker (){
         //System.out.println("t: " + total);
 
+
         if(total == totalSquares){
             String result ;
             if(playerScore2==playerScore1){
                 result=("Draw");
+
             }
             else if(playerScore2 > playerScore1)
             {
@@ -280,6 +326,10 @@ public class gameActivity extends AppCompatActivity {
 
 
             if (arrayLine.contains(opposite1) && arrayLine.contains(adjacent1) && arrayLine.contains(adjacent2)) {
+                //playing sound
+                sound_effects.play(Square_sound,10,10,0,0,1);
+
+
                 int parsingOpposite1 = Integer.parseInt(opposite1); // checking top box
                 int row = parsingOpposite1/100;
                 int col1 = (parsingOpposite1 / 10) % 10;
@@ -295,15 +345,20 @@ public class gameActivity extends AppCompatActivity {
                 }
                 // add square to current player
                 squares++;
+
             }
 
             if (arrayLine.contains(opposite2) && arrayLine.contains(adjacent3) && arrayLine.contains(adjacent4)) {
+                //playing sound
+                sound_effects.play(Square_sound,10,10,0,0,1);
+
                 int parsingLine = Integer.parseInt(line); //checking bottom box
                 int lineRow = parsingLine/100;
                 int lineCol1 = (parsingLine / 10) % 10;
                 canvas.drawRect(dots[lineRow][lineCol1].x, dots[lineRow][lineCol1].y, dots[lineRow+1][lineCol1+1].x, dots[lineRow+1][lineCol1+1].y, linePaint);
                 // add square to current player
                 squares++;
+
                 if(linePaint.getColor() == player1Color){
                     player1TurnView.setVisibility(View.VISIBLE);
                     player2TurnView.setVisibility(View.INVISIBLE);
@@ -324,13 +379,16 @@ public class gameActivity extends AppCompatActivity {
             String adjacent4 = (line.substring(line.length() - 1)) + Integer.toString(firstDotCol) + Integer.toString(firstDotCol + 1);
 
             if (arrayLine.contains(opposite1) && arrayLine.contains(adjacent1) && arrayLine.contains(adjacent2)) {
+//playing sound
+                sound_effects.play(Square_sound,10,10,0,0,1);
 
                 // add square to current player
                 // left box
                 int cornerCol = firstDotCol -1;
                 int minRow = min(firstDotRow, secondDotRow);
                 canvas.drawRect(dots[minRow][cornerCol].x, dots[minRow][cornerCol].y, dots[minRow+1][cornerCol+1].x, dots[minRow+1][cornerCol+1].y, linePaint);
-                squares++;
+                 squares++;
+
                 if(linePaint.getColor() == player1Color){
                     player1TurnView.setVisibility(View.VISIBLE);
                     player2TurnView.setVisibility(View.INVISIBLE);
@@ -342,13 +400,16 @@ public class gameActivity extends AppCompatActivity {
             }
 
             if (arrayLine.contains(opposite2) && arrayLine.contains(adjacent3) && arrayLine.contains(adjacent4)) {
+//playing sound
+                sound_effects.play(Square_sound,10,10,0,0,1);
 
                 // add square to current player
                 // left box
                 int cornerCol = firstDotCol;
                 int minRow = min(firstDotRow, secondDotRow);
                 canvas.drawRect(dots[minRow][cornerCol].x, dots[minRow][cornerCol].y, dots[minRow+1][cornerCol+1].x, dots[minRow+1][cornerCol+1].y, linePaint);
-                squares++;
+                 squares++;
+
                 if(linePaint.getColor() == player1Color){
                     player1TurnView.setVisibility(View.VISIBLE);
                     player2TurnView.setVisibility(View.INVISIBLE);
