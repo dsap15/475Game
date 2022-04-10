@@ -10,9 +10,9 @@
 
     <ImageView
         android:id="@+id/version_number"
-        android:layout_width="231dp"
-        android:layout_height="78dp"
-        android:layout_marginBottom="12dp"
+        android:layout_width="199dp"
+        android:layout_height="56dp"
+        android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -45,74 +45,101 @@
 
     <ImageButton
         android:id="@+id/start"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/version_number"
+        android:layout_width="279dp"
+        android:layout_height="103dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toTopOf="@+id/quickplay"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/refined_logo"
-        app:layout_constraintVertical_bias="0.097"
-        app:srcCompat="@drawable/temp_start_button" />
+        app:srcCompat="@drawable/startflavortest"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/tutorial"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="279dp"
+        android:layout_height="103dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
         app:layout_constraintBottom_toTopOf="@+id/version_number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/refined_logo"
-        app:srcCompat="@drawable/temp_tutorial_button" />
+        app:layout_constraintTop_toBottomOf="@+id/quickplay"
+        app:srcCompat="@drawable/tutorialflavortest"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageButton
         android:id="@+id/quickplay"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="279dp"
+        android:layout_height="103dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
         app:layout_constraintBottom_toTopOf="@+id/version_number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/refined_logo"
-        app:layout_constraintVertical_bias="0.88"
-        app:srcCompat="@drawable/temp_quickplay_button" />
+        app:srcCompat="@drawable/quickplayflavortest"
+        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
     <TextView
         android:id="@+id/start_text"
         android:layout_width="118dp"
         android:layout_height="66dp"
         android:fontFamily="@font/edosz"
+        android:shadowColor="#000000"
+        android:shadowDx="12"
+        android:shadowDy="12"
+        android:shadowRadius="6"
         android:text="START"
-        android:textColor="#FF0000"
-        android:textSize="45sp"
+        android:textAllCaps="true"
+        android:textColor="#FFFFFF"
+        android:textSize="40sp"
         app:layout_constraintBottom_toBottomOf="@+id/start"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/start" />
+        app:layout_constraintEnd_toEndOf="@+id/start"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="@+id/start"
+        app:layout_constraintTop_toTopOf="@+id/start"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/tutorial_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/edosz"
+        android:shadowColor="#000000"
+        android:shadowDx="12"
+        android:shadowDy="12"
+        android:shadowRadius="6"
         android:text="TUTORIAL"
-        android:textColor="#FF0000"
-        android:textSize="45sp"
-        app:layout_constraintBottom_toBottomOf="@+id/quickplay"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/quickplay" />
+        android:textAllCaps="true"
+        android:textColor="#FFFFFF"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tutorial"
+        app:layout_constraintEnd_toEndOf="@+id/tutorial"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="@+id/tutorial"
+        app:layout_constraintTop_toTopOf="@+id/tutorial"
+        app:layout_constraintVertical_bias="0.603" />
 
     <TextView
         android:id="@+id/quickplay_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/edosz"
+        android:shadowColor="#000000"
+        android:shadowDx="12"
+        android:shadowDy="12"
+        android:shadowRadius="6"
         android:text="QUICKPLAY"
-        android:textColor="#FF0000"
+        android:textAllCaps="true"
+        android:textColor="#FFFFFF"
         android:textSize="40sp"
-        app:layout_constraintBottom_toBottomOf="@+id/tutorial"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tutorial" />
+        app:layout_constraintBottom_toTopOf="@+id/tutorial"
+        app:layout_constraintEnd_toEndOf="@+id/quickplay"
+        app:layout_constraintStart_toStartOf="@+id/quickplay"
+        app:layout_constraintTop_toTopOf="@+id/quickplay"
+        app:layout_constraintVertical_bias="0.493" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

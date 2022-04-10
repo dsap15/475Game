@@ -57,6 +57,7 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="92dp"
         android:fontFamily="@font/edosz"
         android:text="SELECT YOUR GRID"
         android:textColor="#FF0000"
