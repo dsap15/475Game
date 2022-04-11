@@ -4,6 +4,7 @@ import android.app.UiModeManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.AudioManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -17,6 +18,8 @@ import androidx.appcompat.app.AppCompatDelegate;
 
 
 public class SettingsActivity extends AppCompatActivity {
+
+    String SoundVal = "SOUNDS: ON";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +65,46 @@ public class SettingsActivity extends AppCompatActivity {
                     }
                 });
 
+        // sound DO NOT FUCKING REMOVE IT            :- TP
+
+        ToggleButton soundButton = findViewById(R.id.toggleButton);
+        soundButton.setText(SoundVal);
+        SharedPreferences sharedPreferences2 = getSharedPreferences("save2", MODE_PRIVATE);
+        soundButton.setChecked(sharedPreferences2.getBoolean("value2", true));
+        if (soundButton.isChecked()) {
+            AudioManager amanager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+            amanager.setStreamMute(AudioManager.STREAM_NOTIFICATION, true);
+        }
+        else {
+            AudioManager amanager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+            amanager.setStreamMute(AudioManager.STREAM_NOTIFICATION, false);
+        }
+
+        soundButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view)
+            {
+                boolean clicked = soundButton.isChecked();
+                if(clicked) {
+
+                    AudioManager amanager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+                    amanager.setStreamMute(AudioManager.STREAM_NOTIFICATION, true);
+
+                    SharedPreferences.Editor editor = getSharedPreferences("save2", MODE_PRIVATE).edit();
+                    editor.putBoolean("value2", true);
+                    editor.apply();
+                    soundButton.setChecked(true);
+                }
+                else {
+                    AudioManager amanager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+                    amanager.setStreamMute(AudioManager.STREAM_NOTIFICATION, false);
+                    SharedPreferences.Editor editor = getSharedPreferences("save2", MODE_PRIVATE).edit();
+                    editor.putBoolean("value2",false);
+                    editor.apply();
+                    soundButton.setChecked(false);
+                }
+            }
+        });
 
 
     }
