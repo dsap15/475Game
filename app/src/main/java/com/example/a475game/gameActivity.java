@@ -126,10 +126,7 @@ public class gameActivity extends AppCompatActivity {
         // box finish sound
         Square_sound = sound_effects.load(this,R.raw.squaresound,5);
         // result sound
-      //  Result_sound = sound_effects.load(this,R.raw.resultsound,0);
-
-
-
+        Result_sound = sound_effects.load(this,R.raw.resultsound,0);
 
     }
 
@@ -286,6 +283,7 @@ public class gameActivity extends AppCompatActivity {
 
 
         if(total == totalSquares){
+            sound_effects.play(Result_sound,1,1,0,0,1);
             String result ;
             if(playerScore2==playerScore1){
                 result=("Draw");
@@ -301,6 +299,7 @@ public class gameActivity extends AppCompatActivity {
 
             Intent intent = new Intent(gameActivity.this, ResultActivity.class);
             intent.putExtra("Result",result);
+            intent.putExtra("ResultSound",Result_sound);
             startActivity(intent);
 
             // exit to result page
