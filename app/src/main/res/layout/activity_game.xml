@@ -14,7 +14,7 @@
             android:fontFamily="@font/edosz"
             android:text="@string/YourTurn"
             android:textSize="30dp"
-            android:textColor="#000255"
+            android:textColor="@color/player1TvColor"
             android:visibility="invisible"/>
 
         <TextView
@@ -31,7 +31,11 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/edosz"
             android:text="@string/player1"
-            android:textColor="#000255"
+            android:textColor="@color/player1TvColor"
+            android:shadowColor="#D6d7d7"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="0"
             android:textSize="30dp"
             android:textStyle="bold" />
 
@@ -72,6 +76,11 @@
             android:textColor="#FF0000"
             android:visibility="invisible"/>
 
+        <ImageButton
+            android:id="@+id/imageButton6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/final_menu_button" />
 
 
 </LinearLayout>

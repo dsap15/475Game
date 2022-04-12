@@ -31,7 +31,7 @@ int Result_Sound;
         resultSound.start();
 
 
-        ImageButton back = (ImageButton) findViewById(R.id.temp_restart_button);
+        ImageButton back = (ImageButton) findViewById(R.id.restart_button);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

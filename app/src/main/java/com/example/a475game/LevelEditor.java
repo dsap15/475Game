@@ -17,7 +17,7 @@ public class LevelEditor extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_level_editor);
 
-        ImageButton backbutton  = (ImageButton) findViewById(R.id.tbackbutton);
+        ImageButton backbutton  = (ImageButton) findViewById(R.id.SECONDPAGEBACKBUTTON);
         backbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -57,7 +57,7 @@ public class LevelEditor extends AppCompatActivity {
             }
         });
 
-        ImageButton begin = findViewById(R.id.temp_begin_button);
+        ImageButton begin = findViewById(R.id.begin_button);
         begin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

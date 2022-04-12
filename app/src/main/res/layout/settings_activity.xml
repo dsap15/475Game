@@ -12,6 +12,7 @@
         android:layout_height="93dp"
         android:background="#03A9F4"
         android:dropDownWidth="match_parent"
+        android:fontFamily="@font/edosz"
         android:entries="@array/languages"
         android:gravity="center_horizontal"
         android:soundEffectsEnabled="false"
@@ -21,10 +22,9 @@
         app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toggleButton3"
-        app:layout_constraintVertical_bias="0.117" />
-
-
-
+        app:layout_constraintVertical_bias="0.117"
+        android:textStyle="bold|italic"/>
+        />
 
     <ToggleButton
         android:id="@+id/toggleButton"
@@ -32,6 +32,7 @@
         android:layout_height="76dp"
         android:layout_marginBottom="18dp"
         android:background="#03A9F4"
+        android:fontFamily="@font/edosz"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#000000"
         android:textOff="@string/SoundOn"
@@ -49,6 +50,7 @@
         android:layout_width="187dp"
         android:layout_height="77dp"
         android:background="#03A9F4"
+        android:fontFamily="@font/edosz"
         android:text="ToggleButton"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textOff="@string/DarkModeOff"
