@@ -6,6 +6,46 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:id="@+id/linear_layout">
+<<<<<<< Updated upstream
+=======
+        <TextView
+            android:id="@+id/P1Turn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/edosz"
+            android:text="@string/YourTurn"
+            android:shadowColor="#000000"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="2"
+            android:textSize="30dp"
+            android:textColor="#000255"
+            android:visibility="invisible"/>
+
+        <TextView
+            android:id="@+id/P1Score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/edosz"
+            android:text="00"
+            android:textSize="48dp" />
+
+        <TextView
+            android:id="@+id/P1text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:fontFamily="@font/edosz"
+            android:scaleType="fitCenter"
+            android:shadowColor="#000000"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="2"
+            android:text="@string/player1"
+            android:textColor="#000255"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+>>>>>>> Stashed changes
 
         <ImageView
             android:id="@+id/myimageview"
@@ -17,4 +57,45 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+<<<<<<< Updated upstream
+=======
+        <TextView
+            android:id="@+id/P2text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/edosz"
+            android:shadowColor="#000000"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="2"
+            android:text="@string/player2"
+            android:textColor="#FF0000"
+            android:textSize="30dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/P2Score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/edosz"
+            android:text="00"
+            android:textSize="50dp" />
+
+        <TextView
+            android:id="@+id/P2Turn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/edosz"
+            android:text="@string/YourTurn"
+            android:shadowColor="#000000"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="2"
+            android:textSize="30sp"
+            android:textColor="#FF0000"
+            android:visibility="invisible"/>
+
+
+
+>>>>>>> Stashed changes
 </LinearLayout>

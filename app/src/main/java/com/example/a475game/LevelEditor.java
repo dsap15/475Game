@@ -25,6 +25,17 @@ public class LevelEditor extends AppCompatActivity {
 
         }
 
+<<<<<<< Updated upstream
+=======
+        ImageButton begin = findViewById(R.id.begin_button);
+        begin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent beginGame = new Intent(view.getContext(), gameActivity.class);
+                startActivity(beginGame);
+            }
+        });
+>>>>>>> Stashed changes
 
     }
 
