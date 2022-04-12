@@ -20,8 +20,8 @@ public class MainActivity extends AppCompatActivity {
 
 
         ImageButton startButton = (ImageButton) findViewById(R.id.start);
-        ImageButton quickPlay = (ImageButton) findViewById(R.id.tutorial);
-        ImageButton tutorial = (ImageButton) findViewById(R.id.quickplay);
+        ImageButton quickPlay = (ImageButton) findViewById(R.id.quickplay);
+        ImageButton tutorial = (ImageButton) findViewById(R.id.tutorial);
         ImageButton setting = (ImageButton) findViewById(R.id.testgearicon);
 
         startButton.setOnClickListener(new View.OnClickListener() {

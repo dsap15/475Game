@@ -18,14 +18,18 @@ int Result_Sound;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if(getIntent().getExtras() != null)
-        {
-            Result_Sound = getIntent().getExtras().getInt("ResultSound");
-        }
+        //if(getIntent().getExtras() != null)
+        //{
+            //Result_Sound = getIntent().getExtras().getInt("ResultSound");
+       // }
         setContentView(R.layout.result_activity);
         TextView tv = findViewById(R.id.winner);
         String result = getIntent().getExtras().getString("Result");
         tv.setText(result);
+
+        MediaPlayer resultSound= MediaPlayer.create(this,R.raw.resultsound);
+        resultSound.start();
+
 
         ImageButton back = (ImageButton) findViewById(R.id.temp_restart_button);
         back.setOnClickListener(new View.OnClickListener() {
@@ -35,9 +39,8 @@ int Result_Sound;
             }
         });
 
-        // Add sound with timer
-//        MediaPlayer resultSound= MediaPlayer.create(ResultActivity.this,R.raw.resultsound);
-//        resultSound.start();
+         //Add sound with timer
+
 
         // sound new
 

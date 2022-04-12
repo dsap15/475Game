@@ -157,7 +157,15 @@ public class gameActivity extends AppCompatActivity {
     }
     private void drawDots(Dot[][] dots, Canvas canvas){
         Paint paint = new Paint();
-        paint.setARGB(255,0,0,0);
+        if(!SettingsActivity.clicked )
+            paint.setARGB(255,0,0,0);
+        if(!SettingsActivity.sailesh)
+            paint.setARGB(255,0,0,0);
+        else{
+            paint.setARGB(255,255,255,255);
+        }
+
+
         for(int r = 0; r < dots.length; r++){
             for(int c =0; c < dots[r].length; c++){
                 Dot dotsForDrawing = dots[r][c];
