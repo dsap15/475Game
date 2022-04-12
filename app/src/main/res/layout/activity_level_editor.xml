@@ -7,16 +7,21 @@
     android:background="#d6d7d7"
     tools:context=".LevelEditor">
 
-    <ImageView
-        android:id="@+id/SELECT_YOUR_GRID"
-        android:layout_width="299dp"
-        android:layout_height="75dp"
+
+    <ImageButton
+        android:id="@+id/SECONDPAGEBACKBUTTON"
+        android:layout_width="79dp"
+        android:layout_height="40dp"
+        android:adjustViewBounds="true"
+        android:padding="0px"
+        android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.003"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.123"
-        app:srcCompat="@drawable/select_your_grid" />
+        app:layout_constraintVertical_bias="0.023"
+        app:srcCompat="@drawable/tbackbutton" />
 
     <ImageButton
         android:id="@+id/option3x3"
@@ -33,21 +38,6 @@
         app:srcCompat="@drawable/final_3x3_grid" />
 
     <ImageButton
-        android:id="@+id/SECONDPAGEBACKBUTTON"
-        android:layout_width="68dp"
-        android:layout_height="69dp"
-        android:adjustViewBounds="true"
-        android:padding="0px"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.008"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/newresizedarrow" />
-
-    <ImageButton
         android:id="@+id/option5x5"
         android:layout_width="128dp"
         android:layout_height="128dp"
@@ -55,11 +45,7 @@
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-<<<<<<< Updated upstream
-        app:layout_constraintHorizontal_bias="0.819"
-=======
-        app:layout_constraintHorizontal_bias="0.756"
->>>>>>> Stashed changes
+        app:layout_constraintHorizontal_bias="0.816"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.286"
@@ -79,6 +65,7 @@
         app:layout_constraintVertical_bias="0.514"
         app:srcCompat="@drawable/final_7x7_grid" />
 
+
     <ImageButton
         android:id="@+id/option9x9"
         android:layout_width="128dp"
@@ -87,7 +74,7 @@
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.756"
+        app:layout_constraintHorizontal_bias="0.816"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.514"
@@ -101,11 +88,7 @@
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-<<<<<<< Updated upstream
-        app:layout_constraintHorizontal_bias="0.819"
-=======
         app:layout_constraintHorizontal_bias="0.18"
->>>>>>> Stashed changes
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.739"
@@ -119,24 +102,17 @@
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.756"
+        app:layout_constraintHorizontal_bias="0.816"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.739"
         app:srcCompat="@drawable/final_random_grid" />
 
-<<<<<<< Updated upstream
-    <ImageButton
-        android:id="@+id/customButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-=======
+
     <TextView
         android:id="@+id/select_your_grid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="92dp"
         android:adjustViewBounds="true"
         android:fontFamily="@font/edosz"
         android:scaleType="fitCenter"
@@ -147,110 +123,13 @@
         android:text="SELECT YOUR GRID"
         android:textColor="#FF0000"
         android:textSize="45sp"
->>>>>>> Stashed changes
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.156"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.693"
+        app:layout_constraintVertical_bias="0.105"
         app:srcCompat="@drawable/random_grid_selection" />
-
-    <ImageButton
-<<<<<<< Updated upstream
-        android:id="@+id/randomGridButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.875"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.693"
-        app:srcCompat="@drawable/custom_grid_selection_2" />
-
-    <ImageButton
-        android:id="@+id/themeButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-=======
-        android:id="@+id/tbackbutton"
-        android:layout_width="112dp"
-        android:layout_height="64dp"
-        android:layout_marginBottom="40dp"
-        android:adjustViewBounds="true"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toTopOf="@+id/select_your_grid"
->>>>>>> Stashed changes
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.806"
-        app:srcCompat="@drawable/themes" />
-
-    <ImageButton
-<<<<<<< Updated upstream
-        android:id="@+id/player1Button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.086"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.884"
-        app:srcCompat="@drawable/player" />
-=======
-        android:id="@+id/begin_button"
-        android:layout_width="352dp"
-        android:layout_height="141dp"
-        android:adjustViewBounds="true"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.627"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.972"
-        app:srcCompat="@drawable/final_begin_button" />
->>>>>>> Stashed changes
-
-    <ImageButton
-        android:id="@+id/player2button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-<<<<<<< Updated upstream
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.913"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.884"
-        app:srcCompat="@drawable/player_2_button" />
-
-    <ImageButton
-        android:id="@+id/beginButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.964"
-        app:srcCompat="@drawable/begin_button" />
-=======
-        android:fontFamily="@font/edosz"
-        android:text="BEGIN!"
-        android:textColor="#FF0000"
-        android:textSize="45dp"
-        app:layout_constraintBottom_toBottomOf="@+id/begin_button"
-        app:layout_constraintEnd_toEndOf="@+id/begin_button"
-        app:layout_constraintHorizontal_bias="0.364"
-        app:layout_constraintStart_toStartOf="@+id/begin_button"
-        app:layout_constraintTop_toTopOf="@+id/begin_button"
-        app:layout_constraintVertical_bias="0.516" />
 
     <TextView
         android:id="@+id/custom_option"
@@ -289,6 +168,35 @@
         app:layout_constraintTop_toTopOf="@+id/imageButton4"
         app:layout_constraintVertical_bias="0.173" />
 
->>>>>>> Stashed changes
+    <ImageButton
+        android:id="@+id/begin_button"
+        android:layout_width="352dp"
+        android:layout_height="141dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.627"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.972"
+        app:srcCompat="@drawable/final_begin_button" />
+
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="134dp"
+        android:layout_height="50dp"
+        android:fontFamily="@font/edosz"
+        android:text="BEGIN!"
+        android:textColor="#FF0000"
+        android:textSize="45dp"
+        app:layout_constraintBottom_toBottomOf="@+id/begin_button"
+        app:layout_constraintEnd_toEndOf="@+id/begin_button"
+        app:layout_constraintHorizontal_bias="0.463"
+        app:layout_constraintStart_toStartOf="@+id/begin_button"
+        app:layout_constraintTop_toTopOf="@+id/begin_button"
+        app:layout_constraintVertical_bias="0.505" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

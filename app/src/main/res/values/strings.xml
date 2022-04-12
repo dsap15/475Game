@@ -26,5 +26,14 @@
     <string name="attachment_title">Download incoming attachments</string>
     <string name="attachment_summary_on">Automatically download attachments for incoming emails
     </string>
+    <string name="language">English</string>
+    <string name="SoundOn">SOUNDS: ON</string>
+    <string name="SoundOff">SOUNDS: OFF</string>
+    <string name="DarkModeOn">DARK MODE: ON</string>
+    <string name="DarkModeOff">DARK MODE: OFF</string>
+    <string name="YourTurn">Your turn</string>
+    <string name="player1">Player 1</string>
+    <string name="player2">Player 2</string>
+    <string name="Winner">Winner</string>
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
 </resources>

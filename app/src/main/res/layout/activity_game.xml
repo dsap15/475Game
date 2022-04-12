@@ -4,22 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
     android:orientation="vertical"
     android:id="@+id/linear_layout">
-<<<<<<< Updated upstream
-=======
         <TextView
             android:id="@+id/P1Turn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/edosz"
             android:text="@string/YourTurn"
-            android:shadowColor="#000000"
-            android:shadowDx="2"
-            android:shadowDy="2"
-            android:shadowRadius="2"
             android:textSize="30dp"
-            android:textColor="#000255"
+            android:textColor="@color/player1TvColor"
             android:visibility="invisible"/>
 
         <TextView
@@ -28,46 +23,36 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/edosz"
             android:text="00"
-            android:textSize="48dp" />
+            android:textSize="50dp" />
 
         <TextView
             android:id="@+id/P1text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
             android:fontFamily="@font/edosz"
-            android:scaleType="fitCenter"
-            android:shadowColor="#000000"
-            android:shadowDx="2"
-            android:shadowDy="2"
-            android:shadowRadius="2"
             android:text="@string/player1"
-            android:textColor="#000255"
-            android:textSize="30sp"
+            android:textColor="@color/player1TvColor"
+            android:shadowColor="#D6d7d7"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="0"
+            android:textSize="30dp"
             android:textStyle="bold" />
->>>>>>> Stashed changes
 
         <ImageView
-            android:id="@+id/myimageview"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#d6d7d7"
+            android:id="@+id/MyImageview"
+            android:layout_width="394dp"
+            android:layout_height="450dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-<<<<<<< Updated upstream
-=======
         <TextView
             android:id="@+id/P2text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/edosz"
-            android:shadowColor="#000000"
-            android:shadowDx="2"
-            android:shadowDy="2"
-            android:shadowRadius="2"
             android:text="@string/player2"
             android:textColor="#FF0000"
             android:textSize="30dp"
@@ -87,15 +72,15 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/edosz"
             android:text="@string/YourTurn"
-            android:shadowColor="#000000"
-            android:shadowDx="2"
-            android:shadowDy="2"
-            android:shadowRadius="2"
-            android:textSize="30sp"
+            android:textSize="30dp"
             android:textColor="#FF0000"
             android:visibility="invisible"/>
 
+        <ImageButton
+            android:id="@+id/imageButton6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/final_menu_button" />
 
 
->>>>>>> Stashed changes
 </LinearLayout>
