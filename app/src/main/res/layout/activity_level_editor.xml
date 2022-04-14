@@ -81,7 +81,7 @@
         app:srcCompat="@drawable/final_9x9_grid" />
 
     <ImageButton
-        android:id="@+id/imageButton3"
+        android:id="@+id/optioncustom"
         android:layout_width="128dp"
         android:layout_height="128dp"
         android:adjustViewBounds="true"
@@ -95,7 +95,7 @@
         app:srcCompat="@drawable/final_custom_grid" />
 
     <ImageButton
-        android:id="@+id/imageButton4"
+        android:id="@+id/optionrandom"
         android:layout_width="128dp"
         android:layout_height="128dp"
         android:adjustViewBounds="true"
@@ -108,6 +108,18 @@
         app:layout_constraintVertical_bias="0.739"
         app:srcCompat="@drawable/final_random_grid" />
 
+
+    <EditText
+        android:id="@+id/test_user_input"
+        android:layout_width="64dp"
+        android:layout_height="38dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="@+id/optioncustom"
+        app:layout_constraintEnd_toEndOf="@+id/optioncustom"
+        app:layout_constraintStart_toStartOf="@+id/optioncustom"
+        app:layout_constraintTop_toTopOf="@+id/optionrandom"
+        app:layout_constraintVertical_bias="0.733" />
 
     <TextView
         android:id="@+id/select_your_grid"
@@ -143,11 +155,11 @@
         android:text="CUSTOM"
         android:textColor="#000000"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageButton3"
-        app:layout_constraintEnd_toEndOf="@+id/imageButton3"
+        app:layout_constraintBottom_toBottomOf="@+id/optioncustom"
+        app:layout_constraintEnd_toEndOf="@+id/optioncustom"
         app:layout_constraintHorizontal_bias="0.453"
-        app:layout_constraintStart_toStartOf="@+id/imageButton3"
-        app:layout_constraintTop_toTopOf="@+id/imageButton3"
+        app:layout_constraintStart_toStartOf="@+id/optioncustom"
+        app:layout_constraintTop_toTopOf="@+id/optioncustom"
         app:layout_constraintVertical_bias="0.18" />
 
     <TextView
@@ -161,11 +173,11 @@
         android:shadowRadius="6"
         android:text="RANDOM"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageButton4"
-        app:layout_constraintEnd_toEndOf="@+id/imageButton4"
+        app:layout_constraintBottom_toBottomOf="@+id/optionrandom"
+        app:layout_constraintEnd_toEndOf="@+id/optionrandom"
         app:layout_constraintHorizontal_bias="0.438"
-        app:layout_constraintStart_toStartOf="@+id/imageButton4"
-        app:layout_constraintTop_toTopOf="@+id/imageButton4"
+        app:layout_constraintStart_toStartOf="@+id/optionrandom"
+        app:layout_constraintTop_toTopOf="@+id/optionrandom"
         app:layout_constraintVertical_bias="0.173" />
 
     <ImageButton

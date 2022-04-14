@@ -3,13 +3,24 @@ package com.example.a475game;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.drawable.AnimationDrawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.MediaController;
+import android.widget.VideoView;
+
+import java.nio.file.WatchEvent;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class MainActivity extends AppCompatActivity {
 
-
+    AnimationDrawable logo_animation;
 
 
     @Override
@@ -17,7 +28,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
+        ImageView imageView = (ImageView)findViewById(R.id.lg0);
+        imageView.setBackgroundResource(R.drawable.animation);
+        logo_animation = (AnimationDrawable) imageView.getBackground();
 
         ImageButton startButton = (ImageButton) findViewById(R.id.start);
         ImageButton quickPlay = (ImageButton) findViewById(R.id.quickplay);
@@ -34,8 +47,14 @@ public class MainActivity extends AppCompatActivity {
         quickPlay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                gameActivity.grid = 3;
-                startActivity(new Intent(MainActivity.this,gameActivity.class));
+                startActivity(new Intent(MainActivity.this, gameActivity.class));
+
+                int min = 3;
+                int max = 7;
+                int random = ThreadLocalRandom.current().nextInt(min, max);
+                if (random % 2 != 0) {
+                    gameActivity.grid = random;
+                }
             }
         });
 
@@ -52,7 +71,10 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, SettingsActivity.class));
             }
         });
-
     }
-
+    @Override
+     public void onWindowFocusChanged(boolean hasFocus){
+        super.onWindowFocusChanged(hasFocus);
+    logo_animation.start();
+}
 }

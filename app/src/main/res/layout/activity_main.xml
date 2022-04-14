@@ -136,6 +136,7 @@
         android:id="@+id/final_main_title"
         android:layout_width="140dp"
         android:layout_height="79dp"
+        android:layout_marginTop="4dp"
         android:fontFamily="@font/edosz"
         android:shadowColor="#000000"
         android:shadowDx="-3"
@@ -145,6 +146,7 @@
         android:textColor="#FFFFFF"
         android:textSize="60sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.538"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -170,22 +172,22 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="91dp"
-        android:layout_height="58dp"
+        android:layout_width="115dp"
+        android:layout_height="64dp"
         android:adjustViewBounds="true"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toTopOf="@+id/final_main_title2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/final_main_title"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintVertical_bias="0.897"
         app:srcCompat="@drawable/final_and" />
 
     <ImageView
-        android:id="@+id/lg0"
+        android:id="@+id/lg"
         android:layout_width="412dp"
         android:layout_height="97dp"
-        app:srcCompat="@drawable/logo_animation_s0"
+        android:alpha="0.0"
         tools:layout_editor_absoluteX="10dp"
         tools:layout_editor_absoluteY="203dp"
         app:layout_constraintBottom_toTopOf="@+id/final_main_title2"
@@ -193,22 +195,47 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/final_main_title"
         app:layout_constraintVertical_bias="4.36"
+        android:shadowColor="#000000"
+        android:shadowDx="12"
+        android:shadowDy="12"
+        android:shadowRadius="6"
         />
 
     <ImageView
-        android:id="@+id/lg1"
+        android:id="@+id/lg0"
         android:layout_width="412dp"
         android:layout_height="97dp"
-        app:srcCompat="@drawable/logo_animation_s1"
         tools:layout_editor_absoluteX="10dp"
         tools:layout_editor_absoluteY="203dp"
         app:layout_constraintBottom_toTopOf="@+id/final_main_title2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/final_main_title"
-        app:layout_constraintVertical_bias="4.36"/>
+        app:layout_constraintVertical_bias="4.36"
+        android:shadowColor="#000000"
+        android:shadowDx="12"
+        android:shadowDy="12"
+        android:shadowRadius="6"
+        />
+
+    <ImageView
+        android:id="@+id/lg1"
+        android:layout_width="412dp"
+        android:layout_height="97dp"
+        tools:layout_editor_absoluteX="10dp"
+        tools:layout_editor_absoluteY="203dp"
+        app:layout_constraintBottom_toTopOf="@+id/final_main_title2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/final_main_title"
+        app:layout_constraintVertical_bias="4.36"
+        android:shadowColor="#000000"
+        android:shadowDx="12"
+        android:shadowDy="12"
+        android:shadowRadius="6"/>
     <ImageView
         android:id="@+id/lg2"
+        android:alpha="0.0"
         android:layout_width="412dp"
         android:layout_height="97dp"
         app:srcCompat="@drawable/logo_animation_s2"
@@ -218,9 +245,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/final_main_title"
-        app:layout_constraintVertical_bias="4.36"/>
+        app:layout_constraintVertical_bias="4.36"
+        android:shadowColor="#000000"
+        android:shadowDx="12"
+        android:shadowDy="12"
+        android:shadowRadius="6"/>
     <ImageView
         android:id="@+id/lg3"
+        android:alpha="0.0"
         android:layout_width="412dp"
         android:layout_height="97dp"
         app:srcCompat="@drawable/logo_animation_s3"
@@ -230,9 +262,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/final_main_title"
-        app:layout_constraintVertical_bias="4.36"/>
+        app:layout_constraintVertical_bias="4.36"
+        android:shadowColor="#000000"
+        android:shadowDx="12"
+        android:shadowDy="12"
+        android:shadowRadius="6"/>
     <ImageView
         android:id="@+id/lg4"
+        android:alpha="0.0"
         android:layout_width="412dp"
         android:layout_height="97dp"
         app:srcCompat="@drawable/logo_animation_s4"
@@ -242,9 +279,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/final_main_title"
-        app:layout_constraintVertical_bias="4.36"/>
+        app:layout_constraintVertical_bias="4.36"
+        android:shadowColor="#000000"
+        android:shadowDx="12"
+        android:shadowDy="12"
+        android:shadowRadius="6"/>
     <ImageView
         android:id="@+id/lg5"
+        android:alpha="0.0"
         android:layout_width="412dp"
         android:layout_height="97dp"
         app:srcCompat="@drawable/logo_animation_s5"
@@ -254,9 +296,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/final_main_title"
-        app:layout_constraintVertical_bias="4.36"/>
+        app:layout_constraintVertical_bias="4.36"
+        android:shadowColor="#000000"
+        android:shadowDx="12"
+        android:shadowDy="12"
+        android:shadowRadius="6"/>
     <ImageView
         android:id="@+id/lg6"
+        android:alpha="0.0"
         android:layout_width="412dp"
         android:layout_height="97dp"
         app:srcCompat="@drawable/logo_animation_s6"
@@ -266,9 +313,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/final_main_title"
-        app:layout_constraintVertical_bias="4.36"/>
+        app:layout_constraintVertical_bias="4.36"
+        android:shadowColor="#000000"
+        android:shadowDx="12"
+        android:shadowDy="12"
+        android:shadowRadius="6"/>
     <ImageView
         android:id="@+id/lg7"
+        android:alpha="0.0"
         android:layout_width="412dp"
         android:layout_height="97dp"
         app:srcCompat="@drawable/logo_animation_s7"
@@ -278,9 +330,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/final_main_title"
-        app:layout_constraintVertical_bias="4.36"/>
+        app:layout_constraintVertical_bias="4.36"
+        android:shadowColor="#000000"
+        android:shadowDx="12"
+        android:shadowDy="12"
+        android:shadowRadius="6"/>
     <ImageView
         android:id="@+id/lg8"
+        android:alpha="0.0"
         android:layout_width="412dp"
         android:layout_height="97dp"
         app:srcCompat="@drawable/logo_animation_s8"
@@ -290,9 +347,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/final_main_title"
-        app:layout_constraintVertical_bias="4.36"/>
+        app:layout_constraintVertical_bias="4.36"
+        android:shadowColor="#000000"
+        android:shadowDx="12"
+        android:shadowDy="12"
+        android:shadowRadius="6"/>
     <ImageView
         android:id="@+id/lg9"
+        android:alpha="0.0"
         android:layout_width="412dp"
         android:layout_height="97dp"
         app:srcCompat="@drawable/logo_animation_s9"
@@ -302,9 +364,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/final_main_title"
-        app:layout_constraintVertical_bias="4.36"/>
+        app:layout_constraintVertical_bias="4.36"
+        android:shadowColor="#000000"
+        android:shadowDx="12"
+        android:shadowDy="12"
+        android:shadowRadius="6"/>
     <ImageView
         android:id="@+id/lg10"
+        android:alpha="0.0"
         android:layout_width="412dp"
         android:layout_height="97dp"
         app:srcCompat="@drawable/logo_animation_s10"
@@ -314,9 +381,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/final_main_title"
-        app:layout_constraintVertical_bias="4.36"/>
+        app:layout_constraintVertical_bias="4.36"
+        android:shadowColor="#000000"
+        android:shadowDx="12"
+        android:shadowDy="12"
+        android:shadowRadius="6"/>
     <ImageView
         android:id="@+id/lg11"
+        android:alpha="0.0"
         android:layout_width="412dp"
         android:layout_height="97dp"
         app:srcCompat="@drawable/logo_animation_s11"
@@ -326,9 +398,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/final_main_title"
-        app:layout_constraintVertical_bias="4.36"/>
+        app:layout_constraintVertical_bias="4.36"
+        android:shadowColor="#000000"
+        android:shadowDx="12"
+        android:shadowDy="12"
+        android:shadowRadius="6"/>
     <ImageView
         android:id="@+id/lg12"
+        android:alpha="0.0"
         android:layout_width="412dp"
         android:layout_height="97dp"
         app:srcCompat="@drawable/logo_animation_s12"
@@ -338,9 +415,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/final_main_title"
-        app:layout_constraintVertical_bias="4.36"/>
+        app:layout_constraintVertical_bias="4.36"
+        android:shadowColor="#000000"
+        android:shadowDx="12"
+        android:shadowDy="12"
+        android:shadowRadius="6"/>
     <ImageView
         android:id="@+id/lg13"
+        android:alpha="0.0"
         android:layout_width="412dp"
         android:layout_height="97dp"
         app:srcCompat="@drawable/logo_animation_s13"
@@ -350,9 +432,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/final_main_title"
-        app:layout_constraintVertical_bias="4.36"/>
+        app:layout_constraintVertical_bias="4.36"
+        android:shadowColor="#000000"
+        android:shadowDx="12"
+        android:shadowDy="12"
+        android:shadowRadius="6"/>
     <ImageView
         android:id="@+id/lg14"
+        android:alpha="0.0"
         android:layout_width="412dp"
         android:layout_height="97dp"
         app:srcCompat="@drawable/logo_animation_s14"
@@ -362,9 +449,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/final_main_title"
-        app:layout_constraintVertical_bias="4.36"/>
+        app:layout_constraintVertical_bias="4.36"
+        android:shadowColor="#000000"
+        android:shadowDx="12"
+        android:shadowDy="12"
+        android:shadowRadius="6"/>
     <ImageView
         android:id="@+id/lg15"
+        android:alpha="0.0"
         android:layout_width="412dp"
         android:layout_height="97dp"
         app:srcCompat="@drawable/logo_animation_s15"
@@ -374,9 +466,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/final_main_title"
-        app:layout_constraintVertical_bias="4.36"/>
+        app:layout_constraintVertical_bias="4.36"
+        android:shadowColor="#000000"
+        android:shadowDx="12"
+        android:shadowDy="12"
+        android:shadowRadius="6"/>
     <ImageView
         android:id="@+id/lg16"
+        android:alpha="0.0"
         android:layout_width="412dp"
         android:layout_height="97dp"
         app:srcCompat="@drawable/logo_animation_s16"
@@ -386,9 +483,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/final_main_title"
-        app:layout_constraintVertical_bias="4.36"/>
+        app:layout_constraintVertical_bias="4.36"
+        android:shadowColor="#000000"
+        android:shadowDx="12"
+        android:shadowDy="12"
+        android:shadowRadius="6"/>
     <ImageView
         android:id="@+id/lg17"
+        android:alpha="0.0"
         android:layout_width="412dp"
         android:layout_height="97dp"
         app:srcCompat="@drawable/logo_animation_s17"
@@ -398,9 +500,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/final_main_title"
-        app:layout_constraintVertical_bias="4.36"/>
+        app:layout_constraintVertical_bias="4.36"
+        android:shadowColor="#000000"
+        android:shadowDx="12"
+        android:shadowDy="12"
+        android:shadowRadius="6"/>
     <ImageView
         android:id="@+id/lg18"
+        android:alpha="0.0"
         android:layout_width="412dp"
         android:layout_height="97dp"
         app:srcCompat="@drawable/logo_animation_s18"
@@ -410,9 +517,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/final_main_title"
-        app:layout_constraintVertical_bias="4.36"/>
+        app:layout_constraintVertical_bias="4.36"
+        android:shadowColor="#000000"
+        android:shadowDx="12"
+        android:shadowDy="12"
+        android:shadowRadius="6"/>
     <ImageView
         android:id="@+id/lg19"
+        android:alpha="0.0"
         android:layout_width="412dp"
         android:layout_height="97dp"
         app:srcCompat="@drawable/logo_animation_s19"
@@ -422,9 +534,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/final_main_title"
-        app:layout_constraintVertical_bias="4.36"/>
+        app:layout_constraintVertical_bias="4.36"
+        android:shadowColor="#000000"
+        android:shadowDx="12"
+        android:shadowDy="12"
+        android:shadowRadius="6"/>
     <ImageView
         android:id="@+id/lg20"
+        android:alpha="0.0"
         android:layout_width="412dp"
         android:layout_height="97dp"
         app:srcCompat="@drawable/logo_animation_s20"
@@ -434,9 +551,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/final_main_title"
-        app:layout_constraintVertical_bias="4.36"/>
+        app:layout_constraintVertical_bias="4.36"
+        android:shadowColor="#000000"
+        android:shadowDx="12"
+        android:shadowDy="12"
+        android:shadowRadius="6"/>
     <ImageView
         android:id="@+id/lg21"
+        android:alpha="0.0"
         android:layout_width="412dp"
         android:layout_height="97dp"
         app:srcCompat="@drawable/logo_animation_s21"
@@ -446,9 +568,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/final_main_title"
-        app:layout_constraintVertical_bias="4.36"/>
+        app:layout_constraintVertical_bias="4.36"
+        android:shadowColor="#000000"
+        android:shadowDx="12"
+        android:shadowDy="12"
+        android:shadowRadius="6"/>
     <ImageView
         android:id="@+id/lg22"
+        android:alpha="0.0"
         android:layout_width="412dp"
         android:layout_height="97dp"
         app:srcCompat="@drawable/logo_animation_s22"
@@ -458,11 +585,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/final_main_title"
-        app:layout_constraintVertical_bias="4.36"/>
+        app:layout_constraintVertical_bias="4.36"
+        android:shadowColor="#000000"
+        android:shadowDx="12"
+        android:shadowDy="12"
+        android:shadowRadius="6"/>
 
 
     <ImageView
         android:id="@+id/lg23"
+        android:alpha="0.0"
         android:layout_width="412dp"
         android:layout_height="97dp"
         app:srcCompat="@drawable/logo_animation_s23"
@@ -472,10 +604,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/final_main_title"
-        app:layout_constraintVertical_bias="4.36"/>
+        app:layout_constraintVertical_bias="4.36"
+        android:shadowColor="#000000"
+        android:shadowDx="12"
+        android:shadowDy="12"
+        android:shadowRadius="6"/>
 
     <ImageView
     android:id="@+id/lg24"
+        android:alpha="0.0"
     android:layout_width="412dp"
     android:layout_height="97dp"
     app:srcCompat="@drawable/logo_animation_s24"
@@ -485,10 +622,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/final_main_title"
-        app:layout_constraintVertical_bias="4.36"/>
+        app:layout_constraintVertical_bias="4.36"
+        android:shadowColor="#000000"
+        android:shadowDx="12"
+        android:shadowDy="12"
+        android:shadowRadius="6"/>
 
     <ImageView
         android:id="@+id/lg25"
+        android:alpha="0.0"
         android:layout_width="412dp"
         android:layout_height="97dp"
         app:srcCompat="@drawable/logo_animation_s25"
@@ -498,10 +640,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/final_main_title"
-        app:layout_constraintVertical_bias="4.36"/>
+        app:layout_constraintVertical_bias="4.36"
+        android:shadowColor="#000000"
+        android:shadowDx="12"
+        android:shadowDy="12"
+        android:shadowRadius="6"/>
 
     <ImageView
         android:id="@+id/lg26"
+        android:alpha="0.0"
         android:layout_width="412dp"
         android:layout_height="97dp"
         app:srcCompat="@drawable/logo_animation_s26"
@@ -511,10 +658,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/final_main_title"
-        app:layout_constraintVertical_bias="4.36"/>
+        app:layout_constraintVertical_bias="4.36"
+        android:shadowColor="#000000"
+        android:shadowDx="12"
+        android:shadowDy="12"
+        android:shadowRadius="6"/>
 
     <ImageView
         android:id="@+id/lg27"
+        android:alpha="0.0"
         android:layout_width="412dp"
         android:layout_height="97dp"
         app:srcCompat="@drawable/logo_animation_s27"
@@ -524,10 +676,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/final_main_title"
-        app:layout_constraintVertical_bias="4.36"/>
+        app:layout_constraintVertical_bias="4.36"
+        android:shadowColor="#000000"
+        android:shadowDx="12"
+        android:shadowDy="12"
+        android:shadowRadius="6"/>
 
     <ImageView
         android:id="@+id/lg28"
+        android:alpha="0.0"
         android:layout_width="412dp"
         android:layout_height="97dp"
         app:srcCompat="@drawable/logo_animation_s28"
@@ -537,10 +694,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/final_main_title"
-        app:layout_constraintVertical_bias="4.36"/>
+        app:layout_constraintVertical_bias="4.36"
+        android:shadowColor="#000000"
+        android:shadowDx="12"
+        android:shadowDy="12"
+        android:shadowRadius="6"/>
 
     <ImageView
         android:id="@+id/lg29"
+        android:alpha="0.0"
         android:layout_width="412dp"
         android:layout_height="97dp"
         app:srcCompat="@drawable/logo_animation_s29"
@@ -550,9 +712,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/final_main_title"
-        app:layout_constraintVertical_bias="4.36"/>
+        app:layout_constraintVertical_bias="4.36"
+        android:shadowColor="#000000"
+        android:shadowDx="12"
+        android:shadowDy="12"
+        android:shadowRadius="6"/>
     <ImageView
         android:id="@+id/lg30"
+        android:alpha="0.0"
         android:layout_width="412dp"
         android:layout_height="97dp"
         app:srcCompat="@drawable/logo_animation_s30"
@@ -562,9 +729,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/final_main_title"
-        app:layout_constraintVertical_bias="4.36"/>
+        app:layout_constraintVertical_bias="4.36"
+        android:shadowColor="#000000"
+        android:shadowDx="12"
+        android:shadowDy="12"
+        android:shadowRadius="6"/>
     <ImageView
         android:id="@+id/lg31"
+        android:alpha="0.0"
         android:layout_width="412dp"
         android:layout_height="97dp"
         app:srcCompat="@drawable/logo_animation_s31"
@@ -574,9 +746,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/final_main_title"
-        app:layout_constraintVertical_bias="4.36"/>
+        app:layout_constraintVertical_bias="4.36"
+        android:shadowColor="#000000"
+        android:shadowDx="12"
+        android:shadowDy="12"
+        android:shadowRadius="6"/>
     <ImageView
         android:id="@+id/lg32"
+        android:alpha="0.0"
         android:layout_width="412dp"
         android:layout_height="97dp"
         app:srcCompat="@drawable/logo_animation_s32"
@@ -586,9 +763,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/final_main_title"
-        app:layout_constraintVertical_bias="4.36"/>
+        app:layout_constraintVertical_bias="4.36"
+        android:shadowColor="#000000"
+        android:shadowDx="12"
+        android:shadowDy="12"
+        android:shadowRadius="6"/>
     <ImageView
         android:id="@+id/lg33"
+        android:alpha="0.0"
         android:layout_width="412dp"
         android:layout_height="97dp"
         app:srcCompat="@drawable/logo_animation_s34"
@@ -598,9 +780,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/final_main_title"
-        app:layout_constraintVertical_bias="4.36"/>
+        app:layout_constraintVertical_bias="4.36"
+        android:shadowColor="#000000"
+        android:shadowDx="12"
+        android:shadowDy="12"
+        android:shadowRadius="6"/>
     <ImageView
         android:id="@+id/lg34"
+        android:alpha="0.0"
         android:layout_width="412dp"
         android:layout_height="97dp"
         app:srcCompat="@drawable/logo_animation_s34"
@@ -610,9 +797,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/final_main_title"
-        app:layout_constraintVertical_bias="4.36" />
+        app:layout_constraintVertical_bias="4.36"
+        android:shadowColor="#000000"
+        android:shadowDx="12"
+        android:shadowDy="12"
+        android:shadowRadius="6"/>
     <ImageView
         android:id="@+id/lg35"
+        android:alpha="0.0"
         android:layout_width="412dp"
         android:layout_height="97dp"
         app:srcCompat="@drawable/logo_animation_s35"
@@ -622,9 +814,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/final_main_title"
-        app:layout_constraintVertical_bias="4.36"/>
+        app:layout_constraintVertical_bias="4.36"
+        android:shadowColor="#000000"
+        android:shadowDx="12"
+        android:shadowDy="12"
+        android:shadowRadius="6"/>
     <ImageView
         android:id="@+id/lg36"
+        android:alpha="0.0"
         android:layout_width="412dp"
         android:layout_height="97dp"
         app:srcCompat="@drawable/logo_animation_s36"
@@ -634,9 +831,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/final_main_title"
-        app:layout_constraintVertical_bias="4.36"/>
+        app:layout_constraintVertical_bias="4.36"
+        android:shadowColor="#000000"
+        android:shadowDx="12"
+        android:shadowDy="12"
+        android:shadowRadius="6"/>
     <ImageView
         android:id="@+id/lg37"
+        android:alpha="0.0"
         android:layout_width="412dp"
         android:layout_height="97dp"
         app:srcCompat="@drawable/logo_animation_s37"
@@ -646,9 +848,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/final_main_title"
-        app:layout_constraintVertical_bias="4.36"/>
+        app:layout_constraintVertical_bias="4.36"
+        android:shadowColor="#000000"
+        android:shadowDx="12"
+        android:shadowDy="12"
+        android:shadowRadius="6"/>
     <ImageView
         android:id="@+id/lg38"
+        android:alpha="0.0"
         android:layout_width="412dp"
         android:layout_height="97dp"
         app:srcCompat="@drawable/logo_animation_s38"
@@ -658,9 +865,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/final_main_title"
-        app:layout_constraintVertical_bias="4.36"/>
+        app:layout_constraintVertical_bias="4.36"
+        android:shadowColor="#000000"
+        android:shadowDx="12"
+        android:shadowDy="12"
+        android:shadowRadius="6"/>
     <ImageView
         android:id="@+id/lg39"
+        android:alpha="0.0"
         android:layout_width="412dp"
         android:layout_height="97dp"
         app:srcCompat="@drawable/logo_animation_s39"
@@ -670,9 +882,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/final_main_title"
-        app:layout_constraintVertical_bias="4.36"/>
+        app:layout_constraintVertical_bias="4.36"
+        android:shadowColor="#000000"
+        android:shadowDx="12"
+        android:shadowDy="12"
+        android:shadowRadius="6"/>
     <ImageView
         android:id="@+id/lg40"
+        android:alpha="0.0"
         android:layout_width="412dp"
         android:layout_height="97dp"
         app:srcCompat="@drawable/logo_animation_s40"
@@ -682,9 +899,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/final_main_title"
-        app:layout_constraintVertical_bias="4.36"/>
+        app:layout_constraintVertical_bias="4.36"
+        android:shadowColor="#000000"
+        android:shadowDx="12"
+        android:shadowDy="12"
+        android:shadowRadius="6"/>
     <ImageView
         android:id="@+id/lg41"
+        android:alpha="0.0"
         android:layout_width="412dp"
         android:layout_height="97dp"
         app:srcCompat="@drawable/logo_animation_s41"
@@ -694,9 +916,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/final_main_title"
-        app:layout_constraintVertical_bias="4.36"/>
+        app:layout_constraintVertical_bias="4.36"
+        android:shadowColor="#000000"
+        android:shadowDx="12"
+        android:shadowDy="12"
+        android:shadowRadius="6"/>
     <ImageView
         android:id="@+id/lg42"
+        android:alpha="0.0"
         android:layout_width="412dp"
         android:layout_height="97dp"
         app:srcCompat="@drawable/logo_animation_s42"
@@ -706,9 +933,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/final_main_title"
-        app:layout_constraintVertical_bias="4.36"/>
+        app:layout_constraintVertical_bias="4.36"
+        android:shadowColor="#000000"
+        android:shadowDx="12"
+        android:shadowDy="12"
+        android:shadowRadius="6"/>
     <ImageView
         android:id="@+id/lg43"
+        android:alpha="0.0"
         android:layout_width="412dp"
         android:layout_height="97dp"
         app:srcCompat="@drawable/logo_animation_s43"
@@ -718,9 +950,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/final_main_title"
-        app:layout_constraintVertical_bias="4.36"/>
+        app:layout_constraintVertical_bias="4.36"
+        android:shadowColor="#000000"
+        android:shadowDx="12"
+        android:shadowDy="12"
+        android:shadowRadius="6"/>
     <ImageView
         android:id="@+id/lg44"
+        android:alpha="0.0"
         android:layout_width="412dp"
         android:layout_height="97dp"
         app:srcCompat="@drawable/logo_animation_s44"
@@ -730,9 +967,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/final_main_title"
-        app:layout_constraintVertical_bias="4.36"/>
+        app:layout_constraintVertical_bias="4.36"
+        android:shadowColor="#000000"
+        android:shadowDx="12"
+        android:shadowDy="12"
+        android:shadowRadius="6"/>
     <ImageView
         android:id="@+id/lg45"
+        android:alpha="0.0"
         android:layout_width="412dp"
         android:layout_height="97dp"
         app:srcCompat="@drawable/logo_animation_s45"
@@ -742,9 +984,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/final_main_title"
-        app:layout_constraintVertical_bias="4.36"/>
+        app:layout_constraintVertical_bias="4.36"
+        android:shadowColor="#000000"
+        android:shadowDx="12"
+        android:shadowDy="12"
+        android:shadowRadius="6"/>
     <ImageView
         android:id="@+id/lg46"
+        android:alpha="0.0"
         android:layout_width="412dp"
         android:layout_height="97dp"
         app:srcCompat="@drawable/logo_animation_s46"
@@ -754,9 +1001,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/final_main_title"
-        app:layout_constraintVertical_bias="4.36"/>
+        app:layout_constraintVertical_bias="4.36"
+        android:shadowColor="#000000"
+        android:shadowDx="12"
+        android:shadowDy="12"
+        android:shadowRadius="6"/>
     <ImageView
         android:id="@+id/lg47"
+        android:alpha="0.0"
         android:layout_width="412dp"
         android:layout_height="97dp"
         app:srcCompat="@drawable/logo_animation_s47"
@@ -766,9 +1018,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/final_main_title"
-        app:layout_constraintVertical_bias="4.36"/>
+        app:layout_constraintVertical_bias="4.36"
+        android:shadowColor="#000000"
+        android:shadowDx="12"
+        android:shadowDy="12"
+        android:shadowRadius="6"/>
     <ImageView
         android:id="@+id/lg48"
+        android:alpha="0.0"
         android:layout_width="412dp"
         android:layout_height="97dp"
         app:srcCompat="@drawable/logo_animation_s48"
@@ -778,12 +1035,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/final_main_title"
-        app:layout_constraintVertical_bias="4.36"/>
-
-
-
-
-
+        app:layout_constraintVertical_bias="4.36"
+        android:shadowColor="#000000"
+        android:shadowDx="12"
+        android:shadowDy="12"
+        android:shadowRadius="6"
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
