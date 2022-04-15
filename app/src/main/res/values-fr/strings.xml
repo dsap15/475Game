@@ -36,6 +36,15 @@
     <string name="player1">Joueur 1</string>
     <string name="player2">Joueur 2</string>
     <string name="Winner">Gagnant</string>
+    <string name="tutorial">Didacticiel</string>
+    <string name="QUICKPLAY">Jeu Rapide</string>
+    <string name="START">Démarrer</string>
+    <string name="selectyourgrid">SÉLECTIONNEZ VOTRE GRILLE</string>
+    <string name="begin">COMMENCER</string>
+    <string name="restart">REDÉMARRER</string>
+    <string name="Draw">tirage au sort</string>
+    <string name="Player2Wins" >Joueur 2 Gagne</string>
+    <string name="Player1Wins" >Joueur 1 Gagne</string>
     <string name="title_activity_settings">Settings</string>
     <string name="app_name">App</string>
 </resources>

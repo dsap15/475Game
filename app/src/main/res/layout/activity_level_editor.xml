@@ -123,8 +123,8 @@
 
     <TextView
         android:id="@+id/select_your_grid"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="341dp"
+        android:layout_height="89dp"
         android:adjustViewBounds="true"
         android:fontFamily="@font/edosz"
         android:scaleType="fitCenter"
@@ -132,15 +132,15 @@
         android:shadowDx="6"
         android:shadowDy="6"
         android:shadowRadius="6"
-        android:text="SELECT YOUR GRID"
+        android:text="@string/selectyourgrid"
+        android:textAlignment="center"
         android:textColor="#FF0000"
-        android:textSize="45sp"
+        android:textSize="40sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.105"
+        app:layout_constraintVertical_bias="0.087"
         app:srcCompat="@drawable/random_grid_selection" />
 
     <TextView
@@ -197,15 +197,16 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="134dp"
-        android:layout_height="50dp"
+        android:layout_width="189dp"
+        android:layout_height="62dp"
         android:fontFamily="@font/edosz"
-        android:text="BEGIN!"
+        android:text="@string/begin"
+        android:textAlignment="center"
         android:textColor="#FF0000"
-        android:textSize="45dp"
+        android:textSize="38dp"
         app:layout_constraintBottom_toBottomOf="@+id/begin_button"
         app:layout_constraintEnd_toEndOf="@+id/begin_button"
-        app:layout_constraintHorizontal_bias="0.463"
+        app:layout_constraintHorizontal_bias="0.275"
         app:layout_constraintStart_toStartOf="@+id/begin_button"
         app:layout_constraintTop_toTopOf="@+id/begin_button"
         app:layout_constraintVertical_bias="0.505" />

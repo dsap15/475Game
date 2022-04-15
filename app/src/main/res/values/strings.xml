@@ -35,5 +35,14 @@
     <string name="player1">Player 1</string>
     <string name="player2">Player 2</string>
     <string name="Winner">Winner</string>
+    <string name="tutorial">TUTORIAL</string>
+    <string name="QUICKPLAY">QUICKPLAY</string>
+    <string name="START">START</string>
+    <string name="selectyourgrid">SELECT YOUR GRID</string>
+    <string name="begin">BEGIN!</string>
+    <string name="restart">RESTART</string>
+    <string name="Draw">Draw</string>
+    <string name="Player2Wins" >Player 2 Wins</string>
+    <string name="Player1Wins" >Player 1 Wins</string>
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
 </resources>

@@ -3,7 +3,7 @@
 <resources>
 
     <array name="languages" >
-        <item>Choose Languages </item>
+        <item>Choisissez les langues</item>
         <item>English</item>
         <item>Français</item>
     </array>

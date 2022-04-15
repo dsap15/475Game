@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.ToggleButton;
@@ -19,13 +20,14 @@ import androidx.appcompat.app.AppCompatDelegate;
 import java.util.Locale;
 
 
-public class SettingsActivity extends AppCompatActivity {
+public class SettingsActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     String SoundVal = "SOUNDS: ON";
     Spinner languageSpinner;
     public static String choice;
     SharedPreferences sp;
     public static boolean clicked, sailesh;
+    public static boolean resultsound = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +35,16 @@ public class SettingsActivity extends AppCompatActivity {
         setContentView(R.layout.settings_activity);
 
         languageSpinner = findViewById(R.id.spinner5);
+        Spinner coloredSpinner =  findViewById((R.id.spinner5));
+        ArrayAdapter adapter = ArrayAdapter.createFromResource(
+                this,
+                R.array.languages,
+                R.layout.spinner
+        );
+        adapter.setDropDownViewResource(R.layout.spinner);
+        coloredSpinner.setAdapter(adapter);
+        coloredSpinner.setOnItemSelectedListener(this);
+
 
         ImageButton back = (ImageButton) findViewById(R.id.backButtonSettingsP);
         back.setOnClickListener(new View.OnClickListener() {
@@ -90,9 +102,11 @@ public class SettingsActivity extends AppCompatActivity {
         soundButton.setChecked(sharedPreferences2.getBoolean("value2", true));
         if (soundButton.isChecked()) {
             AudioManager amanager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+            resultsound = true;
             amanager.setStreamMute(AudioManager.STREAM_NOTIFICATION, true);
         } else {
             AudioManager amanager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+            resultsound = false;
             amanager.setStreamMute(AudioManager.STREAM_NOTIFICATION, false);
         }
 
@@ -104,7 +118,7 @@ public class SettingsActivity extends AppCompatActivity {
 
                     AudioManager amanager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
                     amanager.setStreamMute(AudioManager.STREAM_NOTIFICATION, true);
-
+                    resultsound = true;
                     SharedPreferences.Editor editor = getSharedPreferences("save2", MODE_PRIVATE).edit();
                     editor.putBoolean("value2", true);
                     editor.apply();
@@ -112,6 +126,7 @@ public class SettingsActivity extends AppCompatActivity {
                 } else {
                     AudioManager amanager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
                     amanager.setStreamMute(AudioManager.STREAM_NOTIFICATION, false);
+                    resultsound = false;
                     SharedPreferences.Editor editor = getSharedPreferences("save2", MODE_PRIVATE).edit();
                     editor.putBoolean("value2", false);
                     editor.apply();
@@ -158,7 +173,7 @@ public class SettingsActivity extends AppCompatActivity {
         if (lastSelectedLang.equals("English")) {
             localsetter("en");
         }
-        if (lastSelectedLang.equals("French")) {
+        if (lastSelectedLang.equals("Français")) {
             localsetter("fr");
         }
     }
@@ -170,6 +185,16 @@ public class SettingsActivity extends AppCompatActivity {
         }
 
         return 0;
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
+
     }
 }
 

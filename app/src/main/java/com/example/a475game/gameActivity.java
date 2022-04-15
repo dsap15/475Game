@@ -21,6 +21,7 @@ import android.media.MediaPlayer;
 import android.media.SoundPool;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewTreeObserver;
@@ -290,30 +291,30 @@ public class gameActivity extends AppCompatActivity {
         //System.out.println("t: " + total);
 
 
-        if(total == totalSquares){
-            sound_effects.play(Result_sound,1,1,0,0,1);
-            String result ;
-            if(playerScore2==playerScore1){
-                result=("Draw");
+        if(total == totalSquares) {
+            sound_effects.play(Result_sound, 1, 1, 0, 0, 1);
+            String result;
+            if (playerScore2 == playerScore1) {
+                result = getString(R.string.Draw);
 
-            }
-            else if(playerScore2 > playerScore1)
-            {
-                result=("Player 2 Wins");
-            }
-            else {
-                result=("Player 1 Wins");
+
+            } else if (playerScore2 > playerScore1) {
+                result = getString(R.string.Player2Wins);
+            } else {
+                result = getString(R.string.Player1Wins);
             }
 
             Intent intent = new Intent(gameActivity.this, ResultActivity.class);
-            intent.putExtra("Result",result);
-            intent.putExtra("ResultSound",Result_sound);
+            intent.putExtra("Result", result);
             startActivity(intent);
 
             // exit to result page
             System.out.println(result);
+
+
         }
     }
+
 
 
     public boolean lineAndBoxChecker(String line, List<String> arrayLine, int firstDotCol, int firstDotRow, int secondDotCol, int secondDotRow, boolean player1Turn, Paint linePaint) {

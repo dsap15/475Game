@@ -12,24 +12,23 @@ import android.widget.TextView;
 
 public class ResultActivity extends AppCompatActivity {
 
-int Result_Sound;
+    int Result_Sound;
     private SoundPool sound_effects;
+    boolean sound = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //if(getIntent().getExtras() != null)
-        //{
-            //Result_Sound = getIntent().getExtras().getInt("ResultSound");
-       // }
+        sound = SettingsActivity.resultsound;
         setContentView(R.layout.result_activity);
         TextView tv = findViewById(R.id.winner);
         String result = getIntent().getExtras().getString("Result");
         tv.setText(result);
 
-        MediaPlayer resultSound= MediaPlayer.create(this,R.raw.resultsound);
-        resultSound.start();
-
+        if(!sound) {
+            MediaPlayer resultSound = MediaPlayer.create(this, R.raw.resultsound);
+            resultSound.start();
+        }
 
         ImageButton back = (ImageButton) findViewById(R.id.restart_button);
         back.setOnClickListener(new View.OnClickListener() {
@@ -38,14 +37,6 @@ int Result_Sound;
                 startActivity(new Intent(ResultActivity.this, MainActivity.class));
             }
         });
-
-         //Add sound with timer
-
-
-        // sound new
-
-
-
 
     }
 }

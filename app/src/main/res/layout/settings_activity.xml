@@ -1,4 +1,5 @@
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,23 +9,22 @@
 
     <Spinner
         android:id="@+id/spinner5"
-        android:layout_width="259dp"
-        android:layout_height="93dp"
+        android:layout_width="369dp"
+        android:layout_height="89dp"
         android:background="#03A9F4"
         android:dropDownWidth="match_parent"
-        android:fontFamily="@font/edosz"
         android:entries="@array/languages"
+        android:fontFamily="@font/edosz"
+        android:popupBackground="#03A9F4"
         android:gravity="center_horizontal"
         android:soundEffectsEnabled="false"
         android:textAlignment="center"
+        android:textStyle="bold|italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toggleButton3"
-        app:layout_constraintVertical_bias="0.117"
-        android:textStyle="bold|italic"/>
-        />
+        app:layout_constraintVertical_bias="0.163" />
 
     <ToggleButton
         android:id="@+id/toggleButton"
@@ -52,6 +52,7 @@
         android:background="#03A9F4"
         android:fontFamily="@font/edosz"
         android:text="ToggleButton"
+        android:textColor="#000000"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textOff="@string/DarkModeOff"
         android:textOn="@string/DarkModeOn"
