@@ -7,16 +7,33 @@
     android:gravity="center"
     android:orientation="vertical"
     android:id="@+id/linear_layout">
-        <TextView
-            android:id="@+id/P1Turn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/edosz"
-            android:text="@string/YourTurn"
-            android:textSize="30dp"
-            android:textColor="@color/player1TvColor"
-            android:visibility="invisible"/>
 
+        <RelativeLayout
+            android:id="@+id/RelativeLayout01"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp">
+
+                <TextView
+                    android:id="@+id/P1Turn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="@font/edosz"
+                    android:text="@string/YourTurn"
+                    android:textColor="@color/player1TvColor"
+                    android:textSize="30dp"
+                    android:visibility="invisible" />
+
+                <ImageView
+                    android:id="@+id/GamePlayBack"
+                    android:layout_width="79dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="10dp"
+                    app:srcCompat="@drawable/testbackbuttoniconsettings" />
+
+
+        </RelativeLayout>
         <TextView
             android:id="@+id/P1Score"
             android:layout_width="wrap_content"
@@ -76,11 +93,12 @@
             android:textColor="#FF0000"
             android:visibility="invisible"/>
 
+<!--what is this?-->
         <ImageButton
             android:id="@+id/imageButton6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/final_menu_button" />
 
-
 </LinearLayout>
+

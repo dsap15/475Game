@@ -9,7 +9,6 @@ import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -41,7 +40,7 @@ import java.util.List;
 public class gameActivity extends AppCompatActivity {
     private Canvas canvas;
     private Bitmap bitmap;
-    private ImageView imageView;
+    private ImageView imageView, gamePlayBackBtn;
     private TextView player1Text;
     private TextView player2Text;
     private TextView p1score;
@@ -75,14 +74,20 @@ public class gameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
-
-
         imageView = (ImageView) findViewById(R.id.MyImageview);
         player1Text = findViewById(R.id.P1text);
         player2Text = findViewById(R.id.P2text);
         player1TurnView = findViewById(R.id.P1Turn);
         player1TurnView.setVisibility(View.VISIBLE);
         player2TurnView = findViewById(R.id.P2Turn);
+        gamePlayBackBtn =  findViewById(R.id.GamePlayBack);
+
+        gamePlayBackBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(gameActivity.this, MainActivity.class));
+            }
+        });
         LinearLayout linearLayout = (LinearLayout) findViewById(R.id.linear_layout);
         linearLayout.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener()
         {

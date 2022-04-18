@@ -1,10 +1,12 @@
 package com.example.a475game;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
@@ -45,10 +47,10 @@ public class MainActivity extends AppCompatActivity {
         });
 
         quickPlay.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, gameActivity.class));
-
                 int min = 3;
                 int max = 7;
                 int random = ThreadLocalRandom.current().nextInt(min, max);
