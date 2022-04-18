@@ -22,7 +22,7 @@ public class tutorialActivity extends AppCompatActivity {
 
         webView = (WebView) findViewById(R.id.webview);
         webView.setWebViewClient(new WebViewClient());
-        webView.loadUrl("https://www.youtube.com/");
+        webView.loadUrl("https://www.youtube.com/channel/UC5h4y3AkNLq3p-0f58Eed7A/videos.com/");
 
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);

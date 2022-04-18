@@ -173,9 +173,14 @@ public class SettingsActivity extends AppCompatActivity implements AdapterView.O
         if (lastSelectedLang.equals("English")) {
             localsetter("en");
         }
+        if (lastSelectedLang.equals("Español")) {
+            localsetter("es");
+        }
+
         if (lastSelectedLang.equals("Français")) {
             localsetter("fr");
         }
+
     }
     private int getIndex(Spinner spinner, String myString){
         for (int i=0;i<spinner.getCount();i++){

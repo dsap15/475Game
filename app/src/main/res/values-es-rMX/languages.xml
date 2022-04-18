@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <resources>
-
     <array name="languages" >
-        <item>Choose Languages</item>
+        <item>Elija Idiomas</item>
         <item>English</item>
         <item>Español</item>
         <item>Français</item>
@@ -12,6 +10,4 @@
 
     <color name="backgroundColor">#C4A484</color>
     <color name="textcolor">#FFFFFF</color>
-
 </resources>
-
