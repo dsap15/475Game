@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">475Game</string>
+    <string name="app_name">DotsBoxes</string>
     <string name="title_activity_back_button_test">BackButtonTest</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>

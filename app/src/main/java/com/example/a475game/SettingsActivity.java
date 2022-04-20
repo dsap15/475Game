@@ -28,6 +28,7 @@ public class SettingsActivity extends AppCompatActivity implements AdapterView.O
     SharedPreferences sp;
     public static boolean clicked, sailesh;
     public static boolean resultsound = true;
+    public static boolean soundClicked;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -113,7 +114,7 @@ public class SettingsActivity extends AppCompatActivity implements AdapterView.O
         soundButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                boolean soundClicked = soundButton.isChecked();
+                soundClicked = soundButton.isChecked();
                 if (soundClicked) {
 
                     AudioManager amanager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);

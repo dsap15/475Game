@@ -45,5 +45,5 @@
     <string name="Draw">Dibujar</string>
     <string name="Player2Wins" >Jugador 2 Gana</string>
     <string name="Player1Wins" >Jugador 1 Gana</string>
-    <string name="app_name">App</string>
+    <string name="app_name">DotsBoxes</string>
 </resources>

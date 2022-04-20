@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#d6d7d7"
+    android:background="@color/backgroundColord"
     tools:context=".LevelEditor">
 
 
@@ -123,11 +123,11 @@
 
     <TextView
         android:id="@+id/select_your_grid"
-        android:layout_width="341dp"
-        android:layout_height="89dp"
+        android:layout_width="341sp"
+        android:layout_height="78sp"
         android:adjustViewBounds="true"
         android:fontFamily="@font/edosz"
-        android:scaleType="fitCenter"
+        android:scaleType="fitXY"
         android:shadowColor="#000000"
         android:shadowDx="6"
         android:shadowDy="6"
@@ -135,13 +135,13 @@
         android:text="@string/selectyourgrid"
         android:textAlignment="center"
         android:textColor="#FF0000"
-        android:textSize="40sp"
+        android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.528"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.13"
+        app:layout_constraintVertical_bias="0.109"
         app:srcCompat="@drawable/random_grid_selection" />
 
     <TextView
