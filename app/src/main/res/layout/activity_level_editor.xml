@@ -114,12 +114,10 @@
         app:srcCompat="@drawable/final_random_grid" />
 
 
-
-
     <EditText
         android:id="@+id/test_user_input"
-        android:layout_width="64dp"
-        android:layout_height="38dp"
+        android:layout_width="71dp"
+        android:layout_height="43dp"
         android:ems="10"
         android:inputType="number"
         app:layout_constraintBottom_toBottomOf="@+id/optioncustom"
@@ -154,8 +152,8 @@
 
     <TextView
         android:id="@+id/custom_option"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="74dp"
+        android:layout_height="27dp"
         android:fontFamily="@font/edosz"
         android:shadowColor="#000000"
         android:shadowDx="2"
@@ -166,15 +164,15 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/optioncustom"
         app:layout_constraintEnd_toEndOf="@+id/optioncustom"
-        app:layout_constraintHorizontal_bias="0.453"
+        app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toStartOf="@+id/optioncustom"
         app:layout_constraintTop_toTopOf="@+id/optioncustom"
-        app:layout_constraintVertical_bias="0.18" />
+        app:layout_constraintVertical_bias="0.15" />
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="71dp"
-        android:layout_height="24dp"
+        android:layout_width="81dp"
+        android:layout_height="26dp"
         android:fontFamily="@font/edosz"
         android:shadowColor="#000000"
         android:shadowDx="2"
@@ -184,10 +182,10 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/optionrandom"
         app:layout_constraintEnd_toEndOf="@+id/optionrandom"
-        app:layout_constraintHorizontal_bias="0.438"
+        app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="@+id/optionrandom"
         app:layout_constraintTop_toTopOf="@+id/optionrandom"
-        app:layout_constraintVertical_bias="0.173" />
+        app:layout_constraintVertical_bias="0.157" />
 
     <ImageButton
         android:id="@+id/begin_button"
