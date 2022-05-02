@@ -4,6 +4,7 @@ package com.example.a475game;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.media.AudioManager;
@@ -34,7 +35,7 @@ public class SettingsActivity extends AppCompatActivity implements AdapterView.O
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.settings_activity);
-
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         languageSpinner = findViewById(R.id.spinner5);
         Spinner coloredSpinner =  findViewById((R.id.spinner5));
         ArrayAdapter adapter = ArrayAdapter.createFromResource(

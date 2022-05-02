@@ -5,6 +5,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -12,18 +13,27 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 
 import java.util.concurrent.ThreadLocalRandom;
+
+import android.widget.TextView;
 import android.widget.Toast;
 //Just adding a stupid comment because my commit wasn't shown in the actual contributor section
 //Gary Preston main contributor
 
 public class LevelEditor extends AppCompatActivity {
+    private EditText custom_size;
+
+//    public void openDialog() {
+//        AlertDialogCustom custom_dialog = new AlertDialogCustom();
+//        custom_dialog.show(getSupportFragmentManager(), "CAN YOU SEE THIS MESSAGE?");
+//      //Fix this one day
+//    }
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_level_editor);
-
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         ImageButton backbutton  = (ImageButton) findViewById(R.id.SECONDPAGEBACKBUTTON);
         backbutton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -81,26 +91,34 @@ public class LevelEditor extends AppCompatActivity {
         custom_button.setOnClickListener(new View.OnClickListener() {
             final EditText user_input = findViewById(R.id.test_user_input);
 
+            //We can implement dialog box code here
+
             @Override
             public void onClick(View view) {
-                    //Refine code
-                int new_input = Integer.parseInt(user_input.getText().toString());
-                gameActivity.grid = new_input;
 
+                int new_input = Integer.parseInt(user_input.getText().toString());
+                if (new_input > 10 ){
+                    new_input = 10;
+
+                }
+                gameActivity.grid = new_input;
             }
         });
-
 
         ImageButton begin = findViewById(R.id.begin_button);
         begin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 Intent beginGame = new Intent(view.getContext(), gameActivity.class);
                 startActivity(beginGame);
             }
         });
 
         }
+
+
+
     }
 
 

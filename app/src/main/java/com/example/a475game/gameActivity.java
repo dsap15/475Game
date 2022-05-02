@@ -5,6 +5,7 @@ import static java.lang.Math.min;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -62,6 +63,7 @@ public class gameActivity extends AppCompatActivity {
     private int prevTotal =0;
     private int max,button_sound_int,Square_sound,Result_sound;
     private SoundPool sound_effects;
+    // private ImageButton menu; //early menu implementation
 
 
 
@@ -74,6 +76,7 @@ public class gameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         imageView = (ImageView) findViewById(R.id.MyImageview);
         player1Text = findViewById(R.id.P1text);
         player2Text = findViewById(R.id.P2text);
@@ -85,9 +88,15 @@ public class gameActivity extends AppCompatActivity {
         gamePlayBackBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //openDialog(); //Early menu implementation
+
                 startActivity(new Intent(gameActivity.this, MainActivity.class));
             }
         });
+
+
+
+
         LinearLayout linearLayout = (LinearLayout) findViewById(R.id.linear_layout);
         linearLayout.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener()
         {
@@ -138,7 +147,7 @@ public class gameActivity extends AppCompatActivity {
 
 
     private Dot[][] generateDotGrid(int numDots, int screenWidth, int screenHeight) {
-        float borderProportion = 0.2f;
+        float borderProportion = 0.17f; //Controls dots distance from one another
 
         float boxSpaceWidth = (1 - 2 * borderProportion) * screenWidth;
         float boxSpaceHeight = (1 - 2 * borderProportion) * screenHeight;
@@ -156,7 +165,7 @@ public class gameActivity extends AppCompatActivity {
         Dot[][] dots = new Dot[numDots][numDots];
         for (int r = 0; r < numDots; r++) {
             for (int c = 0; c < numDots; c++) {
-                dots[r][c] = new Dot((startX + c * cellSideLength), (startY + r * cellSideLength), 25f);
+                dots[r][c] = new Dot((startX + c * cellSideLength), (startY + r * cellSideLength), 30f); //Controls size of dots
             }
         }
         return dots;
@@ -456,5 +465,10 @@ public class gameActivity extends AppCompatActivity {
             prevTotal = total;
             return player1Turn;
         }
+    }
+    public void openDialog() {
+        AlertDialogCustom custom_dialog = new AlertDialogCustom();
+        custom_dialog.show(getSupportFragmentManager(), "CAN YOU SEE THIS MESSAGE?");
+        //Fix this one day
     }
 }

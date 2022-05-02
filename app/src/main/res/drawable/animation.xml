@@ -15,10 +15,18 @@
     <item
         android:drawable="@drawable/logo_animation_s1"
         android:oneshot="true"
+        android:shadowColor="#000000"
+        android:shadowDx="-3"
+        android:shadowDy="12"
+        android:shadowRadius="6"
         android:duration="100"/>
     <item
         android:drawable="@drawable/logo_animation_s2"
         android:oneshot="true"
+        android:shadowColor="#000000"
+        android:shadowDx="-3"
+        android:shadowDy="12"
+        android:shadowRadius="6"
         android:duration="100"/>
     <item
         android:drawable="@drawable/logo_animation_s3"
@@ -185,7 +193,7 @@
         android:duration="100"/>
     <item
         android:drawable="@drawable/logo_animation_s48"
-        android:duration="5000"/>
+        android:duration="10000"/>
 
 
 
