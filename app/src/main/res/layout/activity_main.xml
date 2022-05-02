@@ -141,15 +141,15 @@
         android:textSize="31sp"
         app:layout_constraintBottom_toBottomOf="@+id/quickplay"
         app:layout_constraintEnd_toEndOf="@+id/quickplay"
-        app:layout_constraintHorizontal_bias="0.292"
+        app:layout_constraintHorizontal_bias="0.212"
         app:layout_constraintStart_toStartOf="@+id/quickplay"
         app:layout_constraintTop_toTopOf="@+id/quickplay"
         app:layout_constraintVertical_bias="0.548" />
 
     <TextView
         android:id="@+id/final_main_title"
-        android:layout_width="183dp"
-        android:layout_height="89dp"
+        android:layout_width="197dp"
+        android:layout_height="91dp"
         android:fontFamily="@font/edosz"
         android:scaleType="centerCrop"
         android:shadowColor="#000000"
@@ -161,15 +161,15 @@
         android:textSize="80sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.526"
+        app:layout_constraintHorizontal_bias="0.518"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.04" />
+        app:layout_constraintVertical_bias="0.021" />
 
     <TextView
         android:id="@+id/final_main_title2"
-        android:layout_width="227dp"
-        android:layout_height="87dp"
+        android:layout_width="243dp"
+        android:layout_height="95dp"
         android:fontFamily="@font/edosz"
         android:scaleType="centerCrop"
         android:shadowColor="#000000"
@@ -197,7 +197,7 @@
         app:layout_constraintHorizontal_bias="0.526"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.134"
+        app:layout_constraintVertical_bias="0.122"
         app:srcCompat="@drawable/final_and" />
 
     <ImageView

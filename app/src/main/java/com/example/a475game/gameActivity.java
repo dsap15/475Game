@@ -147,7 +147,7 @@ public class gameActivity extends AppCompatActivity {
 
 
     private Dot[][] generateDotGrid(int numDots, int screenWidth, int screenHeight) {
-        float borderProportion = 0.17f; //Controls dots distance from one another
+        float borderProportion = 0.15f; //Controls dots distance from one another
 
         float boxSpaceWidth = (1 - 2 * borderProportion) * screenWidth;
         float boxSpaceHeight = (1 - 2 * borderProportion) * screenHeight;
@@ -165,7 +165,7 @@ public class gameActivity extends AppCompatActivity {
         Dot[][] dots = new Dot[numDots][numDots];
         for (int r = 0; r < numDots; r++) {
             for (int c = 0; c < numDots; c++) {
-                dots[r][c] = new Dot((startX + c * cellSideLength), (startY + r * cellSideLength), 30f); //Controls size of dots
+                dots[r][c] = new Dot((startX + c * cellSideLength), (startY + r * cellSideLength), 37f); //Controls size of dots
             }
         }
         return dots;
